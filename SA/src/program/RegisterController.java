@@ -2,9 +2,13 @@ package program;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Contractor;
 
 import java.io.IOException;
@@ -65,4 +69,13 @@ public class RegisterController {
             }
         }
     }
+
+    @FXML
+    private void CancelOnAction(Event event)throws IOException {
+        Parent loader = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Scene scene = new Scene(loader);
+        Stage stage = (Stage) cancel.getScene().getWindow();
+        stage.setScene(scene);
+    }
+
 }

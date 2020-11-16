@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.RegisterController">
    <children>
       <TextField fx:id="name" layoutX="254.0" layoutY="91.0" prefHeight="48.0" prefWidth="293.0" />
@@ -33,12 +32,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="regist" layoutX="254.0" layoutY="392.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="117.0" text="Regist">
+      <Button fx:id="regist" layoutX="254.0" layoutY="392.0" mnemonicParsing="false" onAction="#RegisterOnAction" prefHeight="48.0" prefWidth="117.0" text="Regist">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="cancel" layoutX="407.0" layoutY="392.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="117.0" text="Cancel">
+      <Button fx:id="cancel" layoutX="407.0" layoutY="392.0" mnemonicParsing="false" onAction="#CancelOnAction" prefHeight="48.0" prefWidth="117.0" text="Cancel">
          <font>
             <Font size="18.0" />
          </font>

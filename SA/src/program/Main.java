@@ -33,11 +33,11 @@ public class Main extends Application {
             PreparedStatement create = connection.prepareStatement(
                     "CREATE TABLE IF NOT EXISTS 'Contractor' ('ID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Username' TEXT, 'Password' TEXT)");
             PreparedStatement create2 = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'Job' ('Job ID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Type' TEXT, 'Address' TEXT, 'Date' TEXT, 'ID' TEXT, FOREIGN KEY (ID) REFERENCES 'Contractor' ('ID'))");
+                    "CREATE TABLE IF NOT EXISTS 'Job' ('JobID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Type' TEXT, 'Address' TEXT, 'Date' TEXT, 'ID' TEXT, FOREIGN KEY (ID) REFERENCES 'Contractor' ('ID'))");
             PreparedStatement create3 = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'Equipment' ('Equipment ID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Price' INTEGER, 'Brand' TEXT, 'Detail' TEXT)");
+                    "CREATE TABLE IF NOT EXISTS 'Equipment' ('EquipmentID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Price' INTEGER, 'Brand' TEXT, 'Detail' TEXT)");
             PreparedStatement create4 = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'EquipmentList' ('EquipmentList ID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Equipment Name' TEXT, 'Amount' INTEGER, 'TotalPrice' INTEGER, 'Job ID' INTEGER, FOREIGN KEY (Work ID) REFERENCE 'Job' ('Job ID'))");
+                    "CREATE TABLE IF NOT EXISTS 'EquipmentList' ('EquipmentListID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Equipment Name' TEXT, 'Amount' INTEGER, 'TotalPrice' INTEGER, 'JobID' INTEGER, FOREIGN KEY (JobID) REFERENCES 'Job' ('JobID'))");
 
             create.execute();
             create2.execute();
