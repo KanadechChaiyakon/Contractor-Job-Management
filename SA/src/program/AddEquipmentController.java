@@ -65,6 +65,10 @@ public class AddEquipmentController {
     @FXML
     private void SubmitOnAction(Event event)throws IOException{
 
+        if(CheckTextField()){
+            return;
+        }
+
         for(Job job : jobArrayList){
             if(JobBox.getValue().equals(job.getAddress())){
                 for(EquipmentList equipmentList : equipmentListArrayList){
@@ -93,6 +97,13 @@ public class AddEquipmentController {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION,"Add Equipment Complete", ButtonType.OK);
         alert.showAndWait();
+    }
+
+    private boolean CheckTextField(){
+        if (equipment_name.getText().equals("") || price.getText().equals("") || amount.getText().equals("") || brand.getText().equals("") || detail.getText().equals("")){
+            return true;
+        }
+        return false;
     }
 
 }

@@ -81,6 +81,9 @@ public class DeleteEquipmentController {
     @FXML
     private void DeleteOnAction(Event event){
 
+        if(CheckCombobox()){
+            return;
+        }
         int equipment_id;
         String[] data = equipmentbox.getValue().split(" ");
         equipment_id = Integer.parseInt(data[0]);
@@ -122,5 +125,12 @@ public class DeleteEquipmentController {
         EquipmentListController equipmentListController = loader.getController();
         equipmentListController.SetContractor(contractor);
         equipmentListController.SetID(JobID, ContractorID);
+    }
+
+    private boolean CheckCombobox(){
+        if (jobbox.getValue().equals("") || equipmentbox.getValue().equals("")){
+            return true;
+        }
+        return false;
     }
 }
