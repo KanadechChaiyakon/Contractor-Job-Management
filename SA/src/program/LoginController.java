@@ -35,6 +35,8 @@ public class LoginController {
     @FXML
     private void LoginOnAction(Event event)throws IOException {
 
+        int checkusername = 0;
+
         usernameincorrect.setOpacity(0);
         passwordincorrect.setOpacity(0);
         nullinput.setOpacity(0);
@@ -47,19 +49,24 @@ public class LoginController {
             System.out.println(contractor.getUsername());
             if(username.getText().equals(contractor.getUsername())){
                 if(password.getText().equals(contractor.getPassword())){
-                    Parent loader = FXMLLoader.load(getClass().getResource("CustomerList.fxml"));
-                    Scene scene = new Scene(loader);
-                    Stage stage = (Stage) login.getScene().getWindow();
-                    stage.setScene(scene);
+
+                    FXMLLoader loader = SceneChanger.GetLoaderOnAction(getClass(),"JobList.fxml");
+                    SceneChanger.ChangeSceneWithLoaderOnAction(login,"JobList.fxml",loader);
+                    JobListController jobListController = loader.getController();
+                    jobListController.setContractor(contractor);
+
+
                 }else {
                     passwordincorrect.setOpacity(1);
                     return;
                 }
             }
             else {
-                usernameincorrect.setOpacity(1);
-                return;
+                checkusername += 1;
             }
+        }
+        if(checkusername == contractors.size()){
+            usernameincorrect.setOpacity(1);
         }
     }
 

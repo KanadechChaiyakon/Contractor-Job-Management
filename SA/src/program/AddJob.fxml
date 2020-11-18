@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddJobController">
    <children>
       <TextField fx:id="JobAddress" layoutX="244.0" layoutY="94.0" prefHeight="38.0" prefWidth="313.0" />
@@ -22,7 +21,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <DatePicker fx:id="JodDate" layoutX="244.0" layoutY="225.0" prefHeight="38.0" prefWidth="313.0" />
+      <DatePicker fx:id="JobDate" layoutX="244.0" layoutY="225.0" prefHeight="38.0" prefWidth="313.0" />
       <Label layoutX="158.0" layoutY="231.0" text="วันที่รับงาน">
          <font>
             <Font size="18.0" />
@@ -33,10 +32,20 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="submit" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Submit">
+      <Button fx:id="submit" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="50.0" prefWidth="120.0" text="Submit">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <Label fx:id="nullinput" layoutX="497.0" layoutY="448.0" opacity="0.0" text="please enter all information" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="submitcomplete" layoutX="497.0" layoutY="448.0" opacity="0.0" text="Job add complete" textFill="#00ff35">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
