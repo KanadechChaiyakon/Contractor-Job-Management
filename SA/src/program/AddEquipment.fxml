@@ -4,24 +4,31 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddEquipmentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddEquipmentController">
    <children>
-      <Label layoutX="154.0" layoutY="152.0" text="ชื่ออุปกรณ์">
+      <ImageView fitHeight="600.0" fitWidth="1351.0" layoutX="-125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/blackwood.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="154.0" layoutY="152.0" text="ชื่ออุปกรณ์" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="equipment_name" layoutX="265.0" layoutY="147.0" prefHeight="45.0" prefWidth="286.0" />
       <TextField fx:id="price" layoutX="265.0" layoutY="213.0" prefHeight="45.0" prefWidth="286.0" />
-      <Label layoutX="181.0" layoutY="218.0" text="ราคา">
+      <Label layoutX="181.0" layoutY="218.0" text="ราคา" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="173.0" layoutY="283.0" text="จำนวน">
+      <Label layoutX="173.0" layoutY="283.0" text="จำนวน" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -38,19 +45,19 @@
          </font>
       </Button>
       <TextField fx:id="brand" layoutX="265.0" layoutY="343.0" prefHeight="45.0" prefWidth="286.0" />
-      <Label layoutX="184.0" layoutY="348.0" text="ยี่ห้อ">
+      <Label layoutX="184.0" layoutY="348.0" text="ยี่ห้อ" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="detail" layoutX="265.0" layoutY="410.0" prefHeight="45.0" prefWidth="286.0" />
-      <Label layoutX="153.0" layoutY="415.0" text="รายละเอียด">
+      <Label layoutX="153.0" layoutY="415.0" text="รายละเอียด" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <ComboBox fx:id="JobBox" layoutX="265.0" layoutY="78.0" prefHeight="45.0" prefWidth="286.0" />
-      <Label layoutX="187.0" layoutY="83.0" text="งาน">
+      <Label layoutX="187.0" layoutY="83.0" text="งาน" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

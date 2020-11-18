@@ -4,35 +4,42 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddJobController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddJobController">
    <children>
+      <ImageView fitHeight="613.0" fitWidth="1069.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/abstrac.jpg" />
+         </image>
+      </ImageView>
       <TextField fx:id="JobAddress" layoutX="244.0" layoutY="94.0" prefHeight="38.0" prefWidth="313.0" />
-      <Label layoutX="166.0" layoutY="100.0" text="ที่อยู่งาน">
+      <Label layoutX="166.0" layoutY="100.0" text="ที่อยู่งาน" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <TextField fx:id="JobType" layoutX="244.0" layoutY="158.0" prefHeight="38.0" prefWidth="313.0" />
-      <Label layoutX="156.0" layoutY="164.0" text="ประเภทงาน">
+      <Label layoutX="156.0" layoutY="164.0" text="ประเภทงาน" textFill="#dadada">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <DatePicker fx:id="JobDate" layoutX="244.0" layoutY="225.0" prefHeight="38.0" prefWidth="313.0" />
-      <Label layoutX="158.0" layoutY="231.0" text="วันที่รับงาน">
+      <Label layoutX="158.0" layoutY="231.0" text="วันที่รับงาน" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="39.0" prefWidth="77.0" text="Back">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="39.0" prefWidth="77.0" style="-fx-background-color: #393939;" text="Back" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="submit" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="50.0" prefWidth="120.0" text="Submit">
+      <Button fx:id="submit" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #393939;" text="Submit" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
