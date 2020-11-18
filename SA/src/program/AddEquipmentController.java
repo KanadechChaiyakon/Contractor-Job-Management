@@ -78,9 +78,11 @@ public class AddEquipmentController {
         int Price = Integer.parseInt(price.getText());
         int Amount = Integer.parseInt(amount.getText());
         int TotalPrice = Price*Amount;
-        int TotalCost = equipmentList.getTotal_cost()+TotalPrice;
+        int cost = equipmentList.getTotal_cost();
+        int TotalCost = cost+TotalPrice;
         //System.out.println(equipmentList.getTotal_cost());
         DBConnect.WriteEquipment(equipment_name.getText(),Price,Amount,TotalPrice,brand.getText(),detail.getText(), equipmentList.getEquipmentlist_id());
+        System.out.println(TotalCost);
         DBConnect.UpdateEquipmentList(TotalCost,equipmentList.getEquipmentlist_id());
 
         equipment_name.setText("");

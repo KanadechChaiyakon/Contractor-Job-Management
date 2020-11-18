@@ -94,8 +94,8 @@ public class DeleteEquipmentController {
             }
         }
 
-        equipmentbox.setValue("");
-        equipmentbox.getItems().removeAll();
+        equipmentbox.getSelectionModel().clearSelection();
+        equipmentbox.getItems().clear();
         equipmentListArrayList = DBConnect.ReadEquipmentList();
         equipmentArrayList = DBConnect.ReadEquipment();
 
