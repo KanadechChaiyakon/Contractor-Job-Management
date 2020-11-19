@@ -6,20 +6,25 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.LoginController">
    <children>
-      <ImageView fitHeight="607.0" fitWidth="1096.0" layoutX="-112.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="607.0" fitWidth="1096.0" layoutX="-112.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../resource/black.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="356.0" layoutY="105.0" text="Login" textFill="WHITE">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+      <Pane layoutX="101.0" layoutY="74.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2D3035; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="226.0" layoutY="53.0" text="Welcome" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Label layoutX="154.0" layoutY="224.0" text="Username" textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -30,9 +35,9 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="username" layoutX="277.0" layoutY="219.0" prefHeight="45.0" prefWidth="287.0" style="-fx-border-color: #ffffff; -fx-background-color: #3f3f3f; -fx-text-inner-color: white;" />
-      <TextField fx:id="password" layoutX="277.0" layoutY="295.0" prefHeight="45.0" prefWidth="287.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
-      <Button fx:id="login" layoutX="277.0" layoutY="399.0" mnemonicParsing="false" onAction="#LoginOnAction" style="-fx-background-color: #3f3f3f;" text="Login" textFill="WHITE">
+      <TextField fx:id="username" layoutX="277.0" layoutY="219.0" prefHeight="45.0" prefWidth="287.0" style="-fx-border-color: #414448; -fx-background-color: #2D3035; -fx-text-inner-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextField fx:id="password" layoutX="277.0" layoutY="295.0" prefHeight="45.0" prefWidth="287.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-text-inner-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <Button fx:id="login" layoutX="277.0" layoutY="399.0" mnemonicParsing="false" onAction="#LoginOnAction" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 40; -fx-border-radius: 40;" text="Login" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -52,7 +57,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="register" layoutX="384.0" layoutY="399.0" mnemonicParsing="false" onAction="#GoRegisterOnAction" style="-fx-background-color: #3f3f3f;" text="Register" textFill="WHITE">
+      <Button fx:id="register" layoutX="384.0" layoutY="399.0" mnemonicParsing="false" onAction="#GoRegisterOnAction" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 40; -fx-border-radius: 40;" text="Register" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

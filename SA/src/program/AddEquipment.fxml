@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddEquipmentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddEquipmentController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="1351.0" layoutX="-125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="1351.0" layoutX="-125.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../resource/blackwood.jpg" />
          </image>
@@ -21,8 +21,8 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="equipment_name" layoutX="265.0" layoutY="147.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
-      <TextField fx:id="price" layoutX="265.0" layoutY="213.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
+      <TextField fx:id="equipment_name" layoutX="265.0" layoutY="147.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <TextField fx:id="price" layoutX="265.0" layoutY="213.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Label layoutX="181.0" layoutY="218.0" text="ราคา" textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -33,30 +33,30 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="amount" layoutX="265.0" layoutY="278.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
-      <Button fx:id="submit" layoutX="346.0" layoutY="492.0" mnemonicParsing="false" onAction="#SubmitOnAction" style="-fx-background-color: #828282;" text="Submit" textFill="WHITE">
+      <TextField fx:id="amount" layoutX="265.0" layoutY="278.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <Button fx:id="submit" layoutX="337.0" layoutY="491.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="53.0" prefWidth="127.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Submit" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #828282;" text="Back" textFill="#f8f8f8">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="53.0" prefWidth="99.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Back" textFill="#f8f8f8">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <TextField fx:id="brand" layoutX="265.0" layoutY="343.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
+      <TextField fx:id="brand" layoutX="265.0" layoutY="343.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Label layoutX="184.0" layoutY="348.0" text="ยี่ห้อ" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="detail" layoutX="265.0" layoutY="410.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
+      <TextField fx:id="detail" layoutX="265.0" layoutY="410.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Label layoutX="153.0" layoutY="415.0" text="รายละเอียด" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="JobBox" layoutX="265.0" layoutY="78.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
+      <ComboBox fx:id="JobBox" layoutX="265.0" layoutY="78.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #D5D5D5; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
       <Label layoutX="187.0" layoutY="83.0" text="งาน" textFill="WHITE">
          <font>
             <Font size="24.0" />

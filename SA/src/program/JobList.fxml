@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -8,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.JobListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.JobListController">
    <children>
-      <ImageView fitHeight="622.0" fitWidth="1073.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="622.0" fitWidth="1073.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../resource/abstrac.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="joblist" layoutX="102.0" layoutY="96.0" prefHeight="390.0" prefWidth="596.0">
+      <TableView fx:id="joblist" layoutX="102.0" layoutY="138.0" prefHeight="390.0" prefWidth="596.0">
         <columns>
           <TableColumn fx:id="JobID" prefWidth="101.0" text="JobID" />
           <TableColumn fx:id="Type" prefWidth="99.0" text="Type" />
@@ -25,15 +26,25 @@
             <TableColumn fx:id="Detail" prefWidth="106.0" text="Detail" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #393939;" text="Logout" textFill="WHITE">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-border-radius: 20; -fx-background-radius: 20;" text="Logout" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="add" layoutX="729.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoAddJobOnAction" style="-fx-background-color: #393939;" text="Add" textFill="WHITE">
+      <Button fx:id="add" layoutX="678.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoAddJobOnAction" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-border-radius: 20; -fx-background-radius: 20;" text="Add Job" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <Label layoutX="300.0" layoutY="38.0" text="Welcome" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="contractorname" layoutX="430.0" layoutY="38.0" text="User" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

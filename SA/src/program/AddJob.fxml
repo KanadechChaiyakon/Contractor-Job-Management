@@ -9,37 +9,44 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddJobController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.AddJobController">
    <children>
-      <ImageView fitHeight="613.0" fitWidth="1069.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="613.0" fitWidth="1069.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../resource/abstrac.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="JobAddress" layoutX="244.0" layoutY="94.0" prefHeight="38.0" prefWidth="313.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
-      <Label layoutX="166.0" layoutY="100.0" text="ที่อยู่งาน" textFill="WHITE">
+      <TextField fx:id="JobAddress" layoutX="244.0" layoutY="94.0" prefHeight="61.0" prefWidth="354.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <Label layoutX="136.0" layoutY="107.0" text="ที่อยู่งาน" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="JobType" layoutX="244.0" layoutY="158.0" prefHeight="38.0" prefWidth="313.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
-      <Label layoutX="156.0" layoutY="164.0" text="ประเภทงาน" textFill="#dadada">
+      <TextField fx:id="JobType" layoutX="244.0" layoutY="191.0" prefHeight="61.0" prefWidth="354.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <Label layoutX="122.0" layoutY="204.0" text="ประเภทงาน" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <DatePicker fx:id="JobDate" layoutX="244.0" layoutY="225.0" prefHeight="38.0" prefWidth="313.0" style="-fx-background-color: #3f3f3f;" />
-      <Label layoutX="158.0" layoutY="231.0" text="วันที่รับงาน" textFill="WHITE">
+      <DatePicker fx:id="JobDate" layoutX="244.0" layoutY="282.0" prefHeight="61.0" prefWidth="354.0" style="-fx-background-color: #3f3f3f;" />
+      <Label layoutX="124.0" layoutY="295.0" text="วันที่รับงาน" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="39.0" prefWidth="77.0" style="-fx-background-color: #393939;" text="Back" textFill="WHITE">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Back" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/left-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button fx:id="submit" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #393939;" text="Submit" textFill="WHITE">
+      <Button fx:id="submit" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Submit" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

@@ -46,6 +46,7 @@ public class DeleteEquipmentController {
 
     public void initialize(){
 
+
         jobArrayList = DBConnect.ReadJob();
 
         for(Job job : jobArrayList){

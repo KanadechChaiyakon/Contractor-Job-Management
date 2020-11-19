@@ -8,10 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -26,6 +23,9 @@ public class JobListController {
 
     @FXML
     private Button add, back;
+
+    @FXML
+    private Label contractorname;
 
     @FXML
     private TableView<Job> joblist;
@@ -54,9 +54,12 @@ public class JobListController {
 
 
     public void initialize(){
+
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
+
+                contractorname.setText(contractor.getName());
                 ArrayList<Job> use_job = new ArrayList<>();
 
                 jobArrayList = DBConnect.ReadJobWithButton();
