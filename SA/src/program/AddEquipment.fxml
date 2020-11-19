@@ -21,8 +21,8 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="equipment_name" layoutX="265.0" layoutY="147.0" prefHeight="45.0" prefWidth="286.0" />
-      <TextField fx:id="price" layoutX="265.0" layoutY="213.0" prefHeight="45.0" prefWidth="286.0" />
+      <TextField fx:id="equipment_name" layoutX="265.0" layoutY="147.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
+      <TextField fx:id="price" layoutX="265.0" layoutY="213.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="181.0" layoutY="218.0" text="ราคา" textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -33,31 +33,36 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="amount" layoutX="265.0" layoutY="278.0" prefHeight="45.0" prefWidth="286.0" />
-      <Button fx:id="submit" layoutX="346.0" layoutY="492.0" mnemonicParsing="false" onAction="#SubmitOnAction" text="Submit">
+      <TextField fx:id="amount" layoutX="265.0" layoutY="278.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
+      <Button fx:id="submit" layoutX="346.0" layoutY="492.0" mnemonicParsing="false" onAction="#SubmitOnAction" style="-fx-background-color: #828282;" text="Submit" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" text="Back">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #828282;" text="Back" textFill="#f8f8f8">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <TextField fx:id="brand" layoutX="265.0" layoutY="343.0" prefHeight="45.0" prefWidth="286.0" />
+      <TextField fx:id="brand" layoutX="265.0" layoutY="343.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="184.0" layoutY="348.0" text="ยี่ห้อ" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="detail" layoutX="265.0" layoutY="410.0" prefHeight="45.0" prefWidth="286.0" />
+      <TextField fx:id="detail" layoutX="265.0" layoutY="410.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="153.0" layoutY="415.0" text="รายละเอียด" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="JobBox" layoutX="265.0" layoutY="78.0" prefHeight="45.0" prefWidth="286.0" />
+      <ComboBox fx:id="JobBox" layoutX="265.0" layoutY="78.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="187.0" layoutY="83.0" text="งาน" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nullinput" layoutX="486.0" layoutY="500.0" opacity="0.0" text="please enter all information" textFill="RED">
          <font>
             <Font size="24.0" />
          </font>

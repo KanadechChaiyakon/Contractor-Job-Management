@@ -16,19 +16,19 @@
             <Image url="@../resource/abstrac.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="JobAddress" layoutX="244.0" layoutY="94.0" prefHeight="38.0" prefWidth="313.0" />
+      <TextField fx:id="JobAddress" layoutX="244.0" layoutY="94.0" prefHeight="38.0" prefWidth="313.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="166.0" layoutY="100.0" text="ที่อยู่งาน" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="JobType" layoutX="244.0" layoutY="158.0" prefHeight="38.0" prefWidth="313.0" />
+      <TextField fx:id="JobType" layoutX="244.0" layoutY="158.0" prefHeight="38.0" prefWidth="313.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="156.0" layoutY="164.0" text="ประเภทงาน" textFill="#dadada">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <DatePicker fx:id="JobDate" layoutX="244.0" layoutY="225.0" prefHeight="38.0" prefWidth="313.0" />
+      <DatePicker fx:id="JobDate" layoutX="244.0" layoutY="225.0" prefHeight="38.0" prefWidth="313.0" style="-fx-background-color: #3f3f3f;" />
       <Label layoutX="158.0" layoutY="231.0" text="วันที่รับงาน" textFill="WHITE">
          <font>
             <Font size="18.0" />
@@ -46,10 +46,10 @@
       </Button>
       <Label fx:id="nullinput" layoutX="497.0" layoutY="448.0" opacity="0.0" text="please enter all information" textFill="RED">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="submitcomplete" layoutX="497.0" layoutY="448.0" opacity="0.0" text="Job add complete" textFill="#00ff35">
+      <Label fx:id="checkfield" layoutX="497.0" layoutY="448.0" opacity="0.0" text="please enter all information" textFill="RED">
          <font>
             <Font size="18.0" />
          </font>

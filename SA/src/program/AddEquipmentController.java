@@ -23,6 +23,9 @@ public class AddEquipmentController {
     private TextField equipment_name, price, amount, brand, detail;
 
     @FXML
+    private Label nullinput;
+
+    @FXML
     private ComboBox<String> JobBox;
 
     private Contractor contractor;
@@ -65,7 +68,10 @@ public class AddEquipmentController {
     @FXML
     private void SubmitOnAction(Event event)throws IOException{
 
+        nullinput.setOpacity(0);
+
         if(CheckTextField()){
+            nullinput.setOpacity(1);
             return;
         }
 
@@ -100,7 +106,7 @@ public class AddEquipmentController {
     }
 
     private boolean CheckTextField(){
-        if (equipment_name.getText().equals("") || price.getText().equals("") || amount.getText().equals("") || brand.getText().equals("") || detail.getText().equals("")){
+        if (equipment_name.getText().equals("") || price.getText().equals("") || amount.getText().equals("") || brand.getText().equals("") || detail.getText().equals("") || JobBox.getSelectionModel().getSelectedItem() == null){
             return true;
         }
         return false;

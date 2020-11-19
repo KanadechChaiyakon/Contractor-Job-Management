@@ -15,27 +15,32 @@
             <Image url="@../resource/blackwood.jpg" />
          </image>
       </ImageView>
-      <ComboBox fx:id="jobbox" layoutX="256.0" layoutY="148.0" onAction="#JobSelectedOnAction" prefHeight="43.0" prefWidth="289.0" />
+      <ComboBox fx:id="jobbox" layoutX="256.0" layoutY="148.0" onAction="#JobSelectedOnAction" prefHeight="43.0" prefWidth="289.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="205.0" layoutY="152.0" text="Job" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="equipmentbox" layoutX="256.0" layoutY="222.0" prefHeight="43.0" prefWidth="289.0" />
+      <ComboBox fx:id="equipmentbox" layoutX="256.0" layoutY="222.0" prefHeight="43.0" prefWidth="289.0" style="-fx-background-color: #3f3f3f; -fx-border-color: #ffffff; -fx-text-inner-color: white;" />
       <Label layoutX="127.0" layoutY="226.0" text="Equipment" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="submit" layoutX="347.0" layoutY="325.0" mnemonicParsing="false" onAction="#DeleteOnAction" text="Submit">
+      <Button fx:id="submit" layoutX="347.0" layoutY="325.0" mnemonicParsing="false" onAction="#DeleteOnAction" style="-fx-background-color: #828282;" text="Submit" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" text="Back">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #828282;" text="Back" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
+      <Label fx:id="nullinput" layoutX="486.0" layoutY="333.0" opacity="0.0" text="please enter all information" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

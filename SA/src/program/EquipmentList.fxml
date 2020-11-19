@@ -25,12 +25,12 @@
             <TableColumn fx:id="detail" prefWidth="211.0" text="Detail" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" text="Back">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #828282;" text="Back" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="add" layoutX="729.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoAddEquipmentOnAction" text="Add">
+      <Button fx:id="add" layoutX="729.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoAddEquipmentOnAction" style="-fx-background-color: #828282;" text="Add" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -40,7 +40,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="delete" layoutX="633.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoDeleteOnAction" text="Delete">
+      <Button fx:id="delete" layoutX="633.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoDeleteOnAction" style="-fx-background-color: #828282;" text="Delete" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

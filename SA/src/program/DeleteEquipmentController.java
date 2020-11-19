@@ -3,10 +3,7 @@ package program;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import model.Contractor;
 import model.Equipment;
 import model.EquipmentList;
@@ -22,6 +19,9 @@ public class DeleteEquipmentController {
 
     @FXML
     private Button submit, back;
+
+    @FXML
+    private Label nullinput;
 
     private ArrayList<EquipmentList> equipmentListArrayList;
 
@@ -81,7 +81,10 @@ public class DeleteEquipmentController {
     @FXML
     private void DeleteOnAction(Event event){
 
+        nullinput.setOpacity(0);
+
         if(CheckCombobox()){
+            nullinput.setOpacity(1);
             return;
         }
         int equipment_id;
@@ -128,7 +131,13 @@ public class DeleteEquipmentController {
     }
 
     private boolean CheckCombobox(){
-        if (jobbox.getValue().equals("") || equipmentbox.getValue().equals("")){
+
+        String selected_job = jobbox.getSelectionModel().getSelectedItem();
+        String selected_equipment = equipmentbox.getSelectionModel().getSelectedItem();
+
+        System.out.println(selected_job+" "+selected_equipment);
+
+        if (selected_job == null || selected_equipment == null){
             return true;
         }
         return false;

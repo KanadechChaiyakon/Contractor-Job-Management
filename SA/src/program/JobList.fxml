@@ -25,7 +25,7 @@
             <TableColumn fx:id="Detail" prefWidth="106.0" text="Detail" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #393939;" text="Back" textFill="WHITE">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #393939;" text="Logout" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
