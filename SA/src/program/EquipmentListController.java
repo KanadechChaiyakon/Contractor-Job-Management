@@ -6,8 +6,13 @@ import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.print.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.transform.Scale;
+import javafx.stage.Stage;
 import model.Contractor;
 import model.Equipment;
 import model.EquipmentList;
@@ -19,10 +24,13 @@ import java.util.ArrayList;
 public class EquipmentListController {
 
     @FXML
-    private Button back, add, delete;
+    private Button back, add, delete, create;
 
     @FXML
-    private Label cost;
+    private Label cost, address;
+
+    @FXML
+    private AnchorPane anchor;
 
     @FXML
     private TableView<Equipment> equipmentTableView;
@@ -78,6 +86,7 @@ public class EquipmentListController {
                 //}
                 for(Job job : jobArrayList){
                     if(job.getJobID() == JobID){
+                        address.setText("Work Address : "+job.getAddress());
                         for(EquipmentList equipmentList : equipmentListArrayList){
                             if(equipmentList.getJob_id()==job.getJobID()){
                                 setEquipmentList(equipmentList);
@@ -105,9 +114,80 @@ public class EquipmentListController {
 
                 equipmentTableView.setItems(equipmentObservableList);
 
-                cost.setText("Total Cost : " + equipmentList.getTotal_cost());
+                cost.setText("Total Cost : " + equipmentList.getTotal_cost() + " Baht");
+
+//                create.setOnAction(new EventHandler<ActionEvent>() {
+//
+//                    @Override
+//                    public void handle(ActionEvent event) {
+//
+//                        Label secondLabel = new Label("I'm a Label on new Window");
+//
+//                        StackPane secondaryLayout = new StackPane();
+//                        secondaryLayout.getChildren().add(secondLabel);
+//
+//                        Scene secondScene = new Scene(secondaryLayout, 230, 100);
+//
+//                        // New window (Stage)
+//                        Stage newWindow = new Stage();
+//                        newWindow.setTitle("Second Stage");
+//                        newWindow.setScene(secondScene);
+//
+//                        // Set position of second window, related to primary window.
+//                        newWindow.setX(primaryStage.getX() + 200);
+//                        newWindow.setY(primaryStage.getY() + 100);
+//
+//                        newWindow.show();
+//                    }
+//                });
             }
         });
+    }
+
+    @FXML
+    private void CreateDocumentOnAction(Event event)throws IOException{
+
+        Stage stage = (Stage) create.getScene().getWindow();
+
+//        PrinterJob printerJob = PrinterJob.createPrinterJob();
+//        if(printerJob.showPrintDialog(stage.getOwner()) && printerJob.printPage(anchor)){
+//            printerJob.endJob();
+//        }
+
+        ImageView imageView =new ImageView();
+        Printer printer = Printer.getDefaultPrinter();
+        PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT, Printer.MarginType.DEFAULT);
+        double scaleX = pageLayout.getPrintableWidth() / equipmentTableView.getBoundsInParent().getWidth();
+        double scaleY = pageLayout.getPrintableHeight() / equipmentTableView.getBoundsInParent().getHeight();
+        imageView.getTransforms().add(new Scale(scaleX, scaleY));
+
+        address.setStyle("-fx-text-fill: #000000");
+        cost.setStyle("-fx-text-fill: #000000");
+        anchor.setStyle("-fx-background-color: #ffffff");
+        anchor.setScaleX(0.70);
+        anchor.setScaleY(0.70);
+        anchor.setTranslateX(-265);
+        anchor.setTranslateY(-70);
+
+        PrinterJob job = PrinterJob.createPrinterJob();
+        if (job != null) {
+            boolean successPrintDialog = job.showPrintDialog(stage.getOwner());
+            if(successPrintDialog){
+                boolean success = job.printPage(pageLayout,anchor);
+                if (success) {
+                    job.endJob();
+                }
+
+            }
+        }
+        address.setStyle("-fx-text-fill: #ffffff");
+        cost.setStyle("-fx-text-fill: #ffffff");
+        anchor.setStyle("-fx-background-color: #25282A");
+        anchor.setTranslateX(0);
+        anchor.setTranslateY(0);
+        anchor.setScaleX(1.0);
+        anchor.setScaleY(1.0);
+
     }
 
 

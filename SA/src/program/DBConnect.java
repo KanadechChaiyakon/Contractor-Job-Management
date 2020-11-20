@@ -17,7 +17,7 @@ public class DBConnect {
         Connection connection = null;
         ArrayList<Contractor> contractorArrayList = new ArrayList<>();
 
-        String sql = "SELECT ID, Name, Username, Password, Email, PhoneNumber FROM Contractor";
+        String sql = "SELECT ContractorID, Name, Username, Password, Email, PhoneNumber FROM Contractor";
 
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:test.db");
@@ -25,7 +25,7 @@ public class DBConnect {
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()){
                 contractorArrayList.add(new Contractor(
-                        resultSet.getInt("ID"),
+                        resultSet.getInt("ContractorID"),
                         resultSet.getString("Name"),
                         resultSet.getString("Username"),
                         resultSet.getString("Password"),
@@ -64,7 +64,7 @@ public class DBConnect {
         Connection connection = null;
         ArrayList<Job> jobArrayList = new ArrayList<>();
 
-        String sql = "SELECT JobID, Type, Address, Date, ID FROM Job";
+        String sql = "SELECT JobID, Type, Address, Date, ContractorID FROM Job";
 
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:test.db");
@@ -76,7 +76,7 @@ public class DBConnect {
                         resultSet.getString("Type"),
                         resultSet.getString("Address"),
                         resultSet.getString("Date"),
-                        resultSet.getInt("ID")));
+                        resultSet.getInt("ContractorID")));
             }
         }catch (Exception e){
             System.err.println(e.getMessage());
@@ -90,7 +90,7 @@ public class DBConnect {
         Connection connection = null;
         ObservableList<Job> jobArrayList = FXCollections.observableArrayList();
 
-        String sql = "SELECT JobID, Type, Address, Date, ID FROM Job";
+        String sql = "SELECT JobID, Type, Address, Date, ContractorID FROM Job";
 
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:test.db");
@@ -102,7 +102,7 @@ public class DBConnect {
                         resultSet.getString("Type"),
                         resultSet.getString("Address"),
                         resultSet.getString("Date"),
-                        resultSet.getInt("ID"),
+                        resultSet.getInt("ContractorID"),
                         "Yes"));
             }
         }catch (Exception e){
@@ -113,10 +113,10 @@ public class DBConnect {
     }
 
 
-    public static void WriteJob(String Type, String Address, String Date, Integer ID){
+    public static void WriteJob(String Type, String Address, String Date, Integer ContractorID){
 
         Connection connection = null;
-        String sql = "INSERT INTO Job( Type, Address, Date, ID) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO Job( Type, Address, Date, ContractorID) VALUES(?,?,?,?)";
 
         try{
             connection = DriverManager.getConnection("jdbc:sqlite:test.db");
@@ -124,7 +124,7 @@ public class DBConnect {
             preparedStatement.setString(1,Type);
             preparedStatement.setString(2,Address);
             preparedStatement.setString(3,Date);
-            preparedStatement.setInt(4,ID);
+            preparedStatement.setInt(4,ContractorID);
             preparedStatement.executeUpdate();
             System.out.println("Write Success");
         }catch (Exception e){

@@ -31,9 +31,9 @@ public class Main extends Application {
             System.out.println("database connected");
 
             PreparedStatement create = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'Contractor' ('ID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Username' TEXT, 'Password' TEXT, 'Email' TEXT, 'PhoneNumber' INTEGER)");
+                    "CREATE TABLE IF NOT EXISTS 'Contractor' ('ContractorID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Username' TEXT, 'Password' TEXT, 'Email' TEXT, 'PhoneNumber' INTEGER)");
             PreparedStatement create2 = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'Job' ('JobID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Type' TEXT, 'Address' TEXT, 'Date' TEXT, 'ID' TEXT, FOREIGN KEY (ID) REFERENCES 'Contractor' ('ID'))");
+                    "CREATE TABLE IF NOT EXISTS 'Job' ('JobID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Type' TEXT, 'Address' TEXT, 'Date' TEXT, 'ContractorID' TEXT, FOREIGN KEY (ContractorID) REFERENCES 'Contractor' ('ContractorID'))");
             PreparedStatement create3 = connection.prepareStatement(
                     "CREATE TABLE IF NOT EXISTS 'EquipmentList' ('EquipmentListID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'TotalCost' INTEGER, 'JobID' INTEGER, FOREIGN KEY (JobID) REFERENCES 'Job' ('JobID'))");
             PreparedStatement create4 = connection.prepareStatement(
