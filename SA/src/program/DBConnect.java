@@ -30,7 +30,7 @@ public class DBConnect {
                         resultSet.getString("Username"),
                         resultSet.getString("Password"),
                         resultSet.getString("Email"),
-                        resultSet.getInt("PhoneNumber")));
+                        resultSet.getString("PhoneNumber")));
             }
         }catch (Exception e){
             System.err.println(e.getMessage());
@@ -39,7 +39,7 @@ public class DBConnect {
         return contractorArrayList;
     }
 
-    public static void WriteContractor(String name, String username, String password, String email, int phonenumber){
+    public static void WriteContractor(String name, String username, String password, String email, String phonenumber){
 
         Connection connection = null;
         String sql = "INSERT INTO Contractor(name, username, password, email, phonenumber) VALUES(?,?,?,?,?)";
@@ -51,7 +51,7 @@ public class DBConnect {
             preparedStatement.setString(2,username);
             preparedStatement.setString(3,password);
             preparedStatement.setString(4,email);
-            preparedStatement.setInt(5,phonenumber);
+            preparedStatement.setString(5,phonenumber);
             preparedStatement.executeUpdate();
             System.out.println("Write Success");
         }catch (Exception e){

@@ -22,8 +22,8 @@
           <TableColumn fx:id="Type" prefWidth="91.0" text="Type" />
             <TableColumn fx:id="Address" prefWidth="190.0" text="Address" />
             <TableColumn fx:id="Date" prefWidth="93.0" text="Date" />
-            <TableColumn fx:id="ID" prefWidth="82.0" text="ID" />
-            <TableColumn fx:id="Detail" prefWidth="78.0" text="Detail" />
+            <TableColumn fx:id="ID" prefWidth="100.0" text="ContractorID" />
+            <TableColumn fx:id="Detail" prefWidth="60.0" text="Detail" />
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-border-radius: 20; -fx-background-radius: 20;" text="Logout" textFill="WHITE">

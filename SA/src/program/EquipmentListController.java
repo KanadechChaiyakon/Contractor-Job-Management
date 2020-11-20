@@ -27,7 +27,7 @@ public class EquipmentListController {
     private Button back, add, delete, create;
 
     @FXML
-    private Label cost, address;
+    private Label cost, address, contact;
 
     @FXML
     private AnchorPane anchor;
@@ -115,6 +115,7 @@ public class EquipmentListController {
                 equipmentTableView.setItems(equipmentObservableList);
 
                 cost.setText("Total Cost : " + equipmentList.getTotal_cost() + " Baht");
+                contact.setText("Contact Tel:" +contractor.getPhone_number()+" , Email: "+contractor.getEmail());
 
 //                create.setOnAction(new EventHandler<ActionEvent>() {
 //

@@ -62,5 +62,10 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label fx:id="contact" layoutX="171.0" layoutY="746.0" text="Contact" textFill="#25282a">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -31,7 +31,7 @@ public class Main extends Application {
             System.out.println("database connected");
 
             PreparedStatement create = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'Contractor' ('ContractorID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Username' TEXT, 'Password' TEXT, 'Email' TEXT, 'PhoneNumber' INTEGER)");
+                    "CREATE TABLE IF NOT EXISTS 'Contractor' ('ContractorID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Username' TEXT, 'Password' TEXT, 'Email' TEXT, 'PhoneNumber' TEXT)");
             PreparedStatement create2 = connection.prepareStatement(
                     "CREATE TABLE IF NOT EXISTS 'Job' ('JobID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Type' TEXT, 'Address' TEXT, 'Date' TEXT, 'ContractorID' TEXT, FOREIGN KEY (ContractorID) REFERENCES 'Contractor' ('ContractorID'))");
             PreparedStatement create3 = connection.prepareStatement(

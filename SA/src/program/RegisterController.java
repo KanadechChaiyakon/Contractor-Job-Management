@@ -56,12 +56,7 @@ public class RegisterController {
     }
 
     private boolean CheckPhoneNumber(){
-        try {
-            int a = Integer.parseInt(phonenumber.getText());
-        }catch (NumberFormatException e){
-            checkphone.setOpacity(1);
-            return true;
-        }
+
         if(phonenumber.getText().length() != 10){
             checkphone.setOpacity(1);
             return true;
@@ -129,7 +124,7 @@ public class RegisterController {
         else {
             if (password.getText().equals(confirmpassword.getText())){
 
-                DBConnect.WriteContractor(name.getText(),username.getText(),password.getText(), email.getText(), Integer.parseInt(phonenumber.getText()));
+                DBConnect.WriteContractor(name.getText(),username.getText(),password.getText(), email.getText(), phonenumber.getText());
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION,"Registration Complete", ButtonType.OK);
                 alert.showAndWait();
