@@ -23,7 +23,7 @@ public class AddEquipmentController {
     private TextField equipment_name, price, amount, brand, detail;
 
     @FXML
-    private Label nullinput;
+    private Label nullinput, checkprice, checkamount;
 
     @FXML
     private ComboBox<String> JobBox;
@@ -69,9 +69,19 @@ public class AddEquipmentController {
     private void SubmitOnAction(Event event)throws IOException{
 
         nullinput.setOpacity(0);
+        checkamount.setOpacity(0);
+        checkprice.setOpacity(0);
 
         if(CheckTextField()){
             nullinput.setOpacity(1);
+            return;
+        }
+
+        if (CheckPrice()){
+            return;
+        }
+
+        if (CheckAmount()){
             return;
         }
 
@@ -107,6 +117,32 @@ public class AddEquipmentController {
 
     private boolean CheckTextField(){
         if (equipment_name.getText().equals("") || price.getText().equals("") || amount.getText().equals("") || brand.getText().equals("") || detail.getText().equals("") || JobBox.getSelectionModel().getSelectedItem() == null){
+            return true;
+        }
+        return false;
+    }
+
+    private boolean CheckPrice(){
+        try {
+            int a = Integer.parseInt(price.getText());
+        }catch (NumberFormatException e){
+            checkprice.setOpacity(1);
+            return true;
+        }
+        if(Integer.parseInt(price.getText()) <= 0){
+            return true;
+        }
+        return false;
+    }
+
+    private boolean CheckAmount(){
+        try {
+            int a = Integer.parseInt(amount.getText());
+        }catch (NumberFormatException e){
+            checkamount.setOpacity(1);
+            return true;
+        }
+        if(Integer.parseInt(amount.getText()) <= 0){
             return true;
         }
         return false;

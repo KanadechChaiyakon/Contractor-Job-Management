@@ -4,9 +4,11 @@ public class Contractor {
 
     private int ID;
 
-    private String name, username, password, email, phone_number;
+    private String name, username, password, email;
 
-    public Contractor(int ID, String name, String username, String password, String email, String phone_number) {
+    private int phone_number;
+
+    public Contractor(int ID, String name, String username, String password, String email, int phone_number) {
         this.ID = ID;
         this.name = name;
         this.username = username;
@@ -35,7 +37,7 @@ public class Contractor {
         return email;
     }
 
-    public String getPhone_number() {
+    public int getPhone_number() {
         return phone_number;
     }
 }

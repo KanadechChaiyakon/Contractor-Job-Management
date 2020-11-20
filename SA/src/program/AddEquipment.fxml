@@ -67,5 +67,15 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label fx:id="checkprice" layoutX="574.0" layoutY="222.0" opacity="0.0" text="Invalid Price" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="checkamount" layoutX="574.0" layoutY="287.0" opacity="0.0" text="Invalid Amount" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

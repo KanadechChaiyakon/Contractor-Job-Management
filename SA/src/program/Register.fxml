@@ -15,9 +15,9 @@
             <Image url="@../resource/black.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="name" layoutX="254.0" layoutY="78.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
-      <TextField fx:id="username" layoutX="254.0" layoutY="137.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
-      <TextField fx:id="password" layoutX="255.0" layoutY="200.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextField fx:id="name" layoutX="254.0" layoutY="78.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <TextField fx:id="username" layoutX="254.0" layoutY="137.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <TextField fx:id="password" layoutX="255.0" layoutY="200.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Label layoutX="160.0" layoutY="148.0" prefHeight="27.0" prefWidth="82.0" text="Username" textFill="WHITE">
          <font>
             <Font size="18.0" />
@@ -33,7 +33,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="confirmpassword" layoutX="255.0" layoutY="263.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextField fx:id="confirmpassword" layoutX="255.0" layoutY="263.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Label layoutX="190.0" layoutY="89.0" text="Name" textFill="WHITE">
          <font>
             <Font size="18.0" />
@@ -64,14 +64,34 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="email" layoutX="255.0" layoutY="330.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextField fx:id="email" layoutX="255.0" layoutY="330.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Label layoutX="193.0" layoutY="341.0" text="Email" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="phonenumber" layoutX="255.0" layoutY="389.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextField fx:id="phonenumber" layoutX="255.0" layoutY="389.0" prefHeight="48.0" prefWidth="293.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Label layoutX="121.0" layoutY="400.0" text="Phone Number" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="checkemail" layoutX="560.0" layoutY="344.0" opacity="0.0" text="Invalid Email" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="checkphone" layoutX="560.0" layoutY="400.0" opacity="0.0" text="Invalid Phone Number" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="checkname" layoutX="560.0" layoutY="89.0" opacity="0.0" text="Invalid Name" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="checkusername" layoutX="560.0" layoutY="148.0" opacity="0.0" text="Invalid Username" textFill="RED">
          <font>
             <Font size="18.0" />
          </font>

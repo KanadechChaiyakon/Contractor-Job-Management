@@ -21,7 +21,7 @@ public class RegisterController {
     private TextField name, username, password, confirmpassword, email, phonenumber;
 
     @FXML
-    private Label checktextfield, usernametaken, passwordnotmatch;
+    private Label checktextfield, usernametaken, passwordnotmatch, checkemail, checkphone, checkusername, checkname;
 
     private ArrayList<Contractor> contractors;
 
@@ -39,10 +39,59 @@ public class RegisterController {
     }
 
     public boolean CheckTextField(){
-        if(name.getText().equals("") || username.getText().equals("") || password.getText().equals("")){
+        if(name.getText().equals("") || username.getText().equals("") || password.getText().equals("") || confirmpassword.getText().equals("") || email.getText().equals("") || phonenumber.getText().equals("")){
             return true;
         }
         return false;
+    }
+
+    private boolean CheckEmail(){
+
+        String[] data = email.getText().split("@");
+        String[] data2 = email.getText().split(".");
+        if (data.length == 1){
+            checkemail.setOpacity(1);
+            return true;
+        }
+        else if (data2.length == 1 || data2.length > 3){
+            checkemail.setOpacity(1);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean CheckPhoneNumber(){
+        try {
+            int a = Integer.parseInt(phonenumber.getText());
+        }catch (NumberFormatException e){
+            checkphone.setOpacity(1);
+            return true;
+        }
+        if(phonenumber.getText().length() != 10){
+            checkphone.setOpacity(1);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean CheckUsernameIsString(){
+        try {
+            int a = Integer.parseInt(username.getText());
+        }catch (NumberFormatException e){
+            return false;
+        }
+        checkusername.setOpacity(1);
+        return true;
+    }
+
+    private boolean CheckNameIsString(){
+        try {
+            int a = Integer.parseInt(name.getText());
+        }catch (NumberFormatException e){
+            return false;
+        }
+        checkname.setOpacity(1);
+        return true;
     }
 
     @FXML
@@ -51,6 +100,26 @@ public class RegisterController {
         usernametaken.setOpacity(0);
         checktextfield.setOpacity(0);
         passwordnotmatch.setOpacity(0);
+        checkemail.setOpacity(0);
+        checkphone.setOpacity(0);
+        checkusername.setOpacity(0);
+        checkname.setOpacity(0);
+
+        if(CheckNameIsString()){
+            return;
+        }
+
+        if(CheckUsernameIsString()){
+            return;
+        }
+
+        if (CheckEmail()){
+            return;
+        }
+
+        if(CheckPhoneNumber()){
+            return;
+        }
 
         if (CheckTextField()){
             checktextfield.setOpacity(1);
@@ -64,7 +133,7 @@ public class RegisterController {
         else {
             if (password.getText().equals(confirmpassword.getText())){
 
-                DBConnect.WriteContractor(name.getText(),username.getText(),password.getText(), email.getText(), phonenumber.getText());
+                DBConnect.WriteContractor(name.getText(),username.getText(),password.getText(), email.getText(), Integer.parseInt(phonenumber.getText()));
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION,"Registration Complete", ButtonType.OK);
                 alert.showAndWait();
