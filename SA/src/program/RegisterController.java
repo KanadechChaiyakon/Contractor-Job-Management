@@ -48,12 +48,7 @@ public class RegisterController {
     private boolean CheckEmail(){
 
         String[] data = email.getText().split("@");
-        String[] data2 = email.getText().split(".");
         if (data.length == 1){
-            checkemail.setOpacity(1);
-            return true;
-        }
-        else if (data2.length == 1 || data2.length > 3){
             checkemail.setOpacity(1);
             return true;
         }
@@ -94,6 +89,19 @@ public class RegisterController {
         return true;
     }
 
+    private boolean CheckValue(){
+        boolean ncheck, ucheck, echeck, pcheck;
+        ncheck = CheckNameIsString();
+        ucheck = CheckUsernameIsString();
+        echeck = CheckEmail();
+        pcheck = CheckPhoneNumber();
+
+        if(ncheck || ucheck || echeck || pcheck){
+            return true;
+        }
+        return false;
+    }
+
     @FXML
     private void RegisterOnAction(Event event)throws IOException{
 
@@ -105,24 +113,12 @@ public class RegisterController {
         checkusername.setOpacity(0);
         checkname.setOpacity(0);
 
-        if(CheckNameIsString()){
-            return;
-        }
-
-        if(CheckUsernameIsString()){
-            return;
-        }
-
-        if (CheckEmail()){
-            return;
-        }
-
-        if(CheckPhoneNumber()){
-            return;
-        }
-
         if (CheckTextField()){
             checktextfield.setOpacity(1);
+            return;
+        }
+
+        if(CheckValue()){
             return;
         }
 

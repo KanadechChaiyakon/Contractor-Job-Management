@@ -77,11 +77,7 @@ public class AddEquipmentController {
             return;
         }
 
-        if (CheckPrice()){
-            return;
-        }
-
-        if (CheckAmount()){
+        if (CheckValue()){
             return;
         }
 
@@ -143,6 +139,15 @@ public class AddEquipmentController {
             return true;
         }
         if(Integer.parseInt(amount.getText()) <= 0){
+            return true;
+        }
+        return false;
+    }
+
+    private boolean CheckValue(){
+        boolean acheck = CheckAmount();
+        boolean pcheck = CheckPrice();
+        if(acheck || pcheck){
             return true;
         }
         return false;
