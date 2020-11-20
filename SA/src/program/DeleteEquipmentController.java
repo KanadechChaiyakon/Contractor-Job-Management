@@ -58,6 +58,9 @@ public class DeleteEquipmentController {
     @FXML
     private void JobSelectedOnAction(Event event){
 
+        equipmentbox.getSelectionModel().clearSelection();
+        equipmentbox.getItems().clear();
+
         String job_address = jobbox.getValue();
         for(Job job : jobArrayList){
             if(job_address.equals(job.getAddress())){
