@@ -87,7 +87,7 @@ public class AddJobController {
 
     private boolean CheckJobAddress(){
         try {
-            int a = Integer.parseInt(JobBudget.getText());
+            int a = Integer.parseInt(JobAddress.getText());
         }catch (NumberFormatException e){
             return false;
         }
@@ -98,7 +98,7 @@ public class AddJobController {
 
     private boolean CheckJobType(){
         try {
-            int a = Integer.parseInt(JobBudget.getText());
+            int a = Integer.parseInt(JobType.getText());
         }catch (NumberFormatException e){
             return false;
         }
