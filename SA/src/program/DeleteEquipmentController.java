@@ -1,5 +1,6 @@
 package program;
 
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,56 +32,52 @@ public class DeleteEquipmentController {
 
     private Contractor contractor;
 
-    private EquipmentList use_equipmentList;
-
     private int JobID, ContractorID, job_id, equipmentlistid;
 
     public void SetContractor(Contractor contractor){
         this.contractor = contractor;
     }
 
-    public void SetID(int jobID, int contractorID){
-        this.ContractorID = contractorID;
+    public void SetID(int jobID){
+//        this.ContractorID = contractorID;
         this.JobID = jobID;
     }
 
     public void initialize(){
 
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                equipmentListArrayList = DBConnect.ReadEquipmentList();
+                equipmentArrayList = DBConnect.ReadEquipment();
 
-        jobArrayList = DBConnect.ReadJob();
-
-        for(Job job : jobArrayList){
-            jobbox.getItems().add(job.getAddress());
-        }
-
-    }
-
-    @FXML
-    private void JobSelectedOnAction(Event event){
-
-        equipmentbox.getSelectionModel().clearSelection();
-        equipmentbox.getItems().clear();
-
-        String job_address = jobbox.getValue();
-        for(Job job : jobArrayList){
-            if(job_address.equals(job.getAddress())){
-                job_id = job.getJobID();
-            }
-        }
-        equipmentListArrayList = DBConnect.ReadEquipmentList();
-        equipmentArrayList = DBConnect.ReadEquipment();
-
-        for(EquipmentList equipmentList : equipmentListArrayList){
-            if(equipmentList.getJob_id() == job_id){
-                this.use_equipmentList = equipmentList;
-                for (Equipment equipment : equipmentArrayList){
-                    if(equipment.getEquipmentlistid() == use_equipmentList.getEquipmentlist_id()){
-                        equipmentbox.getItems().add(equipment.getEquipment_id()+" "+equipment.getEquipmentname());
+                for(EquipmentList equipmentList : equipmentListArrayList){
+                    if(equipmentList.getJob_id() == JobID){
+                        for (Equipment equipment : equipmentArrayList){
+                            if(equipment.getEquipment_id() == equipmentList.getEquipment_id()){
+                                equipmentbox.getItems().add(equipment.getEquipment_id()+" "+equipment.getEquipmentname());
+                            }
+                        }
                     }
                 }
             }
-        }
+        });
+
     }
+
+//    @FXML
+//    private void JobSelectedOnAction(Event event){
+//
+//        equipmentbox.getSelectionModel().clearSelection();
+//        equipmentbox.getItems().clear();
+//
+//        String job_address = jobbox.getValue();
+//        for(Job job : jobArrayList){
+//            if(job_address.equals(job.getAddress())){
+//                job_id = job.getJobID();
+//            }
+//        }
+//    }
 
     @FXML
     private void DeleteOnAction(Event event){
@@ -88,7 +85,6 @@ public class DeleteEquipmentController {
         nullinput.setOpacity(0);
 
         if(CheckCombobox()){
-            nullinput.setOpacity(1);
             return;
         }
         int equipment_id;
@@ -96,11 +92,16 @@ public class DeleteEquipmentController {
         equipment_id = Integer.parseInt(data[0]);
         for(Equipment equipment : equipmentArrayList){
             //System.out.println(equipment.getEquipmentlistid()+" "+use_equipmentList.getEquipmentlist_id()+equipment.getEquipment_id()+" "+equipment_id);
-            if(equipment.getEquipmentlistid() == use_equipmentList.getEquipmentlist_id() && equipment_id == equipment.getEquipment_id()){
-                System.out.println("checked");
-                int cost = use_equipmentList.getTotal_cost() - equipment.getTotalprice();
-                DBConnect.UpdateEquipmentList(cost,use_equipmentList.getEquipmentlist_id());
-                DBConnect.DeleteEquipment(equipment.getEquipment_id());
+//            if(equipment.getEquipmentlistid() == use_equipmentList.getEquipmentlist_id() && equipment_id == equipment.getEquipment_id()){
+//                System.out.println("checked");
+//                int cost = use_equipmentList.getTotal_cost() - equipment.getTotalprice();
+//                DBConnect.UpdateEquipmentList(cost,use_equipmentList.getEquipmentlist_id());
+//                DBConnect.DeleteEquipment(equipment.getEquipment_id());
+//            }
+        }
+        for(EquipmentList equipmentList : equipmentListArrayList){
+            if (equipment_id == equipmentList.getEquipment_id()){
+                DBConnect.DeleteEquipmentList(equipmentList.getEquipment_id(),JobID);
             }
         }
 
@@ -110,10 +111,9 @@ public class DeleteEquipmentController {
         equipmentArrayList = DBConnect.ReadEquipment();
 
         for(EquipmentList equipmentList : equipmentListArrayList){
-            if(equipmentList.getJob_id() == job_id){
-                this.use_equipmentList = equipmentList;
+            if(equipmentList.getJob_id() == JobID){
                 for (Equipment equipment : equipmentArrayList){
-                    if(equipment.getEquipmentlistid() == use_equipmentList.getEquipmentlist_id()){
+                    if(equipment.getEquipment_id() == equipmentList.getEquipment_id()){
                         equipmentbox.getItems().add(equipment.getEquipment_id()+" "+equipment.getEquipmentname());
                     }
                 }
@@ -121,7 +121,7 @@ public class DeleteEquipmentController {
         }
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION,"Delete Equipment Complete", ButtonType.OK);
-        alert.showAndWait();
+        alert.show();
 
     }
 
@@ -131,17 +131,15 @@ public class DeleteEquipmentController {
         SceneChanger.ChangeSceneWithLoaderOnAction(back, "EquipmentList.fxml", loader);
         EquipmentListController equipmentListController = loader.getController();
         equipmentListController.SetContractor(contractor);
-        equipmentListController.SetID(JobID, ContractorID);
+        equipmentListController.SetID(JobID);
     }
 
     private boolean CheckCombobox(){
-
-        String selected_job = jobbox.getSelectionModel().getSelectedItem();
         String selected_equipment = equipmentbox.getSelectionModel().getSelectedItem();
 
-        System.out.println(selected_job+" "+selected_equipment);
-
-        if (selected_job == null || selected_equipment == null){
+        if (selected_equipment == null){
+            Alert alert = new Alert(Alert.AlertType.WARNING,"Please select equipment", ButtonType.OK);
+            alert.show();
             return true;
         }
         return false;

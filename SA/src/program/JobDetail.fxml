@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.JobDetailController">
+   <children>
+      <Label fx:id="type" layoutX="23.0" layoutY="179.0" text="ประเภทงาน :">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="address" layoutX="51.0" layoutY="129.0" text="ที่อยู่งาน :">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="date" layoutX="25.0" layoutY="229.0" text="วันที่รับงาน :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="status" layoutX="65.0" layoutY="280.0" text="สถานะ :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="equipmenttable" layoutX="432.0" layoutY="87.0" prefHeight="513.0" prefWidth="519.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="152.0" text="Name" />
+          <TableColumn fx:id="quantity" prefWidth="90.0" text="Quantity" />
+            <TableColumn fx:id="amount" prefWidth="112.0" text="Amount" />
+            <TableColumn fx:id="detail" prefWidth="164.0" text="Detail" />
+        </columns>
+      </TableView>
+      <Button fx:id="accept" layoutX="102.0" layoutY="537.0" mnemonicParsing="false" onAction="#acceptOnAction" text="อนุมัติ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="reject" layoutX="240.0" layoutY="537.0" mnemonicParsing="false" onAction="#rejectOnAction" text="ยกเลิก">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="offer" layoutX="106.0" layoutY="537.0" mnemonicParsing="false" onAction="#offerOnAction" text="เสนอ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="equipmentcost" layoutX="26.0" layoutY="384.0" text="ค่าอุปกรณ์ :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="budget" layoutX="24.0" layoutY="333.0" text="งบประมาณ :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="manage" layoutX="771.0" layoutY="14.0" mnemonicParsing="false" onAction="#ManageEquipmentOnAction" text="จัดการอุปการณ์">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" text="กลับ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="canceloffer" layoutX="240.0" layoutY="537.0" mnemonicParsing="false" onAction="#cancelofferOnAction" text="ยกเลิกเสนอ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="startwork" layoutX="171.0" layoutY="600.0" mnemonicParsing="false" onAction="#StartWorkOnAction" text="เริ่มงาน">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="contractorname" layoutX="40.0" layoutY="87.0" text="ผู้รับเหมา :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="phone" layoutX="43.0" layoutY="427.0" text="เบอร์โทร :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="email" layoutX="59.0" layoutY="471.0" text="email :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

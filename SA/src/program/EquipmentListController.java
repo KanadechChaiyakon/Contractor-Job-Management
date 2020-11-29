@@ -33,13 +33,13 @@ public class EquipmentListController {
     private AnchorPane anchor;
 
     @FXML
-    private TableView<Equipment> equipmentTableView;
+    private TableView<EquipmentList> equipmentTableView;
 
     @FXML
-    private TableColumn<Equipment,String> name, brand, detail;
+    private TableColumn<EquipmentList,String> name, detail;
 
     @FXML
-    private TableColumn<Equipment,Integer> total, amount;
+    private TableColumn<EquipmentList,Integer> quantity, amount;
 
     private Contractor contractor;
 
@@ -53,15 +53,15 @@ public class EquipmentListController {
 
     private ArrayList<Contractor> contractorArrayList;
 
-    private int JobID, ContractorID;
+    private int JobID, TotalAmount;
 
     public void SetContractor(Contractor contractor){
         this.contractor = contractor;
     }
 
-    public void SetID(int jobID, int contractorID){
+    public void SetID(int jobID){
         this.JobID = jobID;
-        this.ContractorID = contractorID;
+        //this.ContractorID = contractorID;
     }
 
     public void setEquipmentList(EquipmentList equipmentList){
@@ -73,74 +73,54 @@ public class EquipmentListController {
             @Override
             public void run() {
 
-                contractorArrayList = DBConnect.ReadContractor();
-                for(Contractor contractor : contractorArrayList){
-                    if(contractor.getID() == ContractorID){
-                        SetContractor(contractor);
-                    }
-                }
+//                contractorArrayList = DBConnect.ReadContractor();
+//                for(Contractor contractor : contractorArrayList){
+//                    if(contractor.getID() == ContractorID){
+//                        SetContractor(contractor);
+//                    }
+//                }
                 equipmentListArrayList = DBConnect.ReadEquipmentList();
+                equipmentArrayList = DBConnect.ReadEquipment();
                 jobArrayList = DBConnect.ReadJob();
                 //for(Job job : jobArrayList){
                 //   JobBox.getItems().add(job.getAddress());
                 //}
-                for(Job job : jobArrayList){
-                    if(job.getJobID() == JobID){
-                        address.setText("Work Address : "+job.getAddress());
-                        for(EquipmentList equipmentList : equipmentListArrayList){
-                            if(equipmentList.getJob_id()==job.getJobID()){
-                                setEquipmentList(equipmentList);
+                for (Job job : jobArrayList) {
+                    if (job.getJobID() == JobID) {
+                        address.setText("Work Address : " + job.getAddress());
+//                        for(EquipmentList equipmentList : equipmentListArrayList){
+//                            if(equipmentList.getJob_id()==job.getJobID()){
+//                                setEquipmentList(equipmentList);
+//                            }
+                    }
+                }
+
+
+                ArrayList<EquipmentList> use_equipment = new ArrayList<>();
+                for(EquipmentList equipmentList : equipmentListArrayList){
+                    if(equipmentList.getJob_id() == JobID){
+                        for(Equipment equipment : equipmentArrayList){
+                            if(equipment.getEquipment_id() == equipmentList.getEquipment_id()){
+                                use_equipment.add(new EquipmentList(equipmentList.getQuantity(), equipmentList.getAmount(), equipmentList.getDetail(), equipment.getEquipmentname()));
+                                TotalAmount += equipmentList.getAmount();
                             }
                         }
                     }
                 }
 
-                ArrayList<Equipment> use_equipment = new ArrayList<>();
 
-                equipmentArrayList = DBConnect.ReadEquipment();
-                for(Equipment equipment : equipmentArrayList){
-                    if(equipment.getEquipmentlistid() == equipmentList.getEquipmentlist_id()){
-                        use_equipment.add(new Equipment(equipment.getAmount(),equipment.getTotalprice(), equipment.getEquipmentname(), equipment.getBrand(), equipment.getDetail()));
-                    }
-                }
+                ObservableList<EquipmentList> equipmentObservableList = FXCollections.observableArrayList(use_equipment);
 
-                ObservableList<Equipment> equipmentObservableList = FXCollections.observableArrayList(use_equipment);
-
-                name.setCellValueFactory(new PropertyValueFactory<>("equipmentname"));
-                brand.setCellValueFactory(new PropertyValueFactory<>("brand"));
+                name.setCellValueFactory(new PropertyValueFactory<>("equipment_name"));
+                quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
                 amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-                total.setCellValueFactory(new PropertyValueFactory<>("totalprice"));
                 detail.setCellValueFactory(new PropertyValueFactory<>("detail"));
 
                 equipmentTableView.setItems(equipmentObservableList);
 
-                cost.setText("Total Cost : " + equipmentList.getTotal_cost() + " Baht");
+                cost.setText("Total Cost : " + TotalAmount + " Baht");
                 contact.setText("Contact Tel:" +contractor.getPhone_number()+" , Email: "+contractor.getEmail());
 
-//                create.setOnAction(new EventHandler<ActionEvent>() {
-//
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//
-//                        Label secondLabel = new Label("I'm a Label on new Window");
-//
-//                        StackPane secondaryLayout = new StackPane();
-//                        secondaryLayout.getChildren().add(secondLabel);
-//
-//                        Scene secondScene = new Scene(secondaryLayout, 230, 100);
-//
-//                        // New window (Stage)
-//                        Stage newWindow = new Stage();
-//                        newWindow.setTitle("Second Stage");
-//                        newWindow.setScene(secondScene);
-//
-//                        // Set position of second window, related to primary window.
-//                        newWindow.setX(primaryStage.getX() + 200);
-//                        newWindow.setY(primaryStage.getY() + 100);
-//
-//                        newWindow.show();
-//                    }
-//                });
             }
         });
     }
@@ -194,19 +174,22 @@ public class EquipmentListController {
 
     @FXML
     private void GoBackOnAction(Event event)throws IOException {
-        FXMLLoader loader = SceneChanger.GetLoaderOnAction(getClass(),"JobList.fxml");
-        SceneChanger.ChangeSceneWithLoaderOnAction(back,"JobList.fxml",loader);
-        JobListController jobListController = loader.getController();
-        jobListController.setContractor(contractor);
+        FXMLLoader loader = SceneChanger.GetLoaderOnAction(getClass(),"JobDetail.fxml");
+        SceneChanger.ChangeSceneWithLoaderOnAction(back,"JobDetail.fxml",loader);
+        JobDetailController jobDetailController = loader.getController();
+        jobDetailController.setJobID(JobID);
+        jobDetailController.setContractor(contractor);
     }
 
     @FXML
     private void GoDeleteOnAction(Event event)throws IOException {
-        FXMLLoader loader = SceneChanger.GetLoaderOnAction(getClass(), "DeleteEquipment.fxml");
-        SceneChanger.ChangeSceneWithLoaderOnAction(delete, "DeleteEquipment.fxml", loader);
+
+        FXMLLoader loader = SceneChanger.GetLoaderOnAction(getClass(),"DeleteEquipment.fxml");
+        SceneChanger.ChangeSceneWithLoaderOnAction(delete,"DeleteEquipment.fxml",loader);
         DeleteEquipmentController deleteEquipmentController = loader.getController();
+        deleteEquipmentController.SetID(JobID);
         deleteEquipmentController.SetContractor(contractor);
-        deleteEquipmentController.SetID(JobID, ContractorID);
+
     }
 
     @FXML
@@ -215,6 +198,6 @@ public class EquipmentListController {
         SceneChanger.ChangeSceneWithLoaderOnAction(add, "AddEquipment.fxml", loader);
         AddEquipmentController addEquipmentController = loader.getController();
         addEquipmentController.setContractor(contractor);
-        addEquipmentController.SetID(JobID,ContractorID);
+        addEquipmentController.SetID(JobID);
     }
 }

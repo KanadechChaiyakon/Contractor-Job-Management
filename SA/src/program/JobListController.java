@@ -65,8 +65,7 @@ public class JobListController {
                 contractorname.setText(contractor.getName());
                 ArrayList<Job> use_job = new ArrayList<>();
 
-                jobArrayList = DBConnect.ReadJobWithButton();
-                equipmentListArrayList = DBConnect.ReadEquipmentList();
+                jobArrayList = DBConnect.ReadJobWithButton(contractor);
 
                 for(Job job : jobArrayList){
                     if(job.getContractorID() == contractor.getID()){
@@ -81,7 +80,7 @@ public class JobListController {
                 Type.setCellValueFactory(new PropertyValueFactory<>("Type"));
                 Address.setCellValueFactory(new PropertyValueFactory<>("Address"));
                 Date.setCellValueFactory(new PropertyValueFactory<>("Date"));
-                ID.setCellValueFactory(new PropertyValueFactory<>("ContractorID"));
+                ID.setCellValueFactory(new PropertyValueFactory<>("Status"));
                 Detail.setCellValueFactory(new PropertyValueFactory<>("Detail"));
 
 
@@ -103,7 +102,6 @@ public class JobListController {
 
     @FXML
     private void GoAddJobOnAction(Event event)throws IOException {
-
         FXMLLoader loader = SceneChanger.GetLoaderOnAction(getClass(), "AddJob.fxml");
         SceneChanger.ChangeSceneWithLoaderOnAction(add, "AddJob.fxml", loader);
         AddJobController addJobController = loader.getController();

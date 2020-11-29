@@ -15,8 +15,8 @@
             <Image url="@../resource/blackwood.jpg" />
          </image>
       </ImageView>
-      <ComboBox fx:id="jobbox" layoutX="256.0" layoutY="148.0" onAction="#JobSelectedOnAction" prefHeight="43.0" prefWidth="289.0" style="-fx-background-color: #D5D5D5; -fx-text-fill: white;" />
-      <Label layoutX="205.0" layoutY="152.0" text="Job" textFill="WHITE">
+      <ComboBox fx:id="jobbox" disable="true" layoutX="256.0" layoutY="148.0" opacity="0.0" prefHeight="43.0" prefWidth="289.0" style="-fx-background-color: #D5D5D5; -fx-text-fill: white;" />
+      <Label disable="true" layoutX="205.0" layoutY="152.0" opacity="0.0" text="Job" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

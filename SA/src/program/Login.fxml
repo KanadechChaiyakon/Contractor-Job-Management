@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -23,25 +24,30 @@
                   <Font size="36.0" />
                </font>
             </Label>
+            <TextField fx:id="username" layoutX="178.0" layoutY="150.0" prefHeight="45.0" prefWidth="287.0" style="-fx-border-color: #414448; -fx-background-color: #2D3035; -fx-text-inner-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" />
+            <PasswordField fx:id="password" layoutX="178.0" layoutY="225.0" prefHeight="45.0" prefWidth="287.0" />
+            <Label layoutX="55.0" layoutY="228.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="155.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="login" layoutX="184.0" layoutY="332.0" mnemonicParsing="false" onAction="#LoginOnAction" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 40; -fx-border-radius: 40;" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="register" layoutX="321.0" layoutY="330.0" mnemonicParsing="false" onAction="#GoRegisterOnAction" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 40; -fx-border-radius: 40;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
-      <Label layoutX="154.0" layoutY="224.0" text="Username" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="157.0" layoutY="300.0" text="Password" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="username" layoutX="277.0" layoutY="219.0" prefHeight="45.0" prefWidth="287.0" style="-fx-border-color: #414448; -fx-background-color: #2D3035; -fx-text-inner-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" />
-      <TextField fx:id="password" layoutX="277.0" layoutY="295.0" prefHeight="45.0" prefWidth="287.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-text-inner-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" />
-      <Button fx:id="login" layoutX="277.0" layoutY="399.0" mnemonicParsing="false" onAction="#LoginOnAction" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 40; -fx-border-radius: 40;" text="Login" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
       <Label fx:id="usernameincorrect" layoutX="574.0" layoutY="232.0" opacity="0.0" text="Username is incorrect" textFill="RED">
          <font>
             <Font size="14.0" />
@@ -57,10 +63,5 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="register" layoutX="384.0" layoutY="399.0" mnemonicParsing="false" onAction="#GoRegisterOnAction" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 40; -fx-border-radius: 40;" text="Register" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

@@ -2,23 +2,46 @@ package model;
 
 public class EquipmentList {
 
-    private int equipmentlist_id, job_id, total_cost;
+    private int equipment_id, job_id, quantity, amount;
 
-    public EquipmentList(int equipmentlist_id, int job_id, int total_cost) {
-        this.equipmentlist_id = equipmentlist_id;
+    private String detail, equipment_name;
+
+    public EquipmentList(int equipment_id, int job_id, int quantity, int amount, String detail) {
+        this.equipment_id = equipment_id;
         this.job_id = job_id;
-        this.total_cost = total_cost;
+        this.quantity = quantity;
+        this.amount = amount;
+        this.detail = detail;
     }
 
-    public int getEquipmentlist_id() {
-        return equipmentlist_id;
+    public EquipmentList(int quantity, int amount, String detail, String equipment_name) {
+        this.quantity = quantity;
+        this.amount = amount;
+        this.detail = detail;
+        this.equipment_name = equipment_name;
+    }
+
+    public int getEquipment_id() {
+        return equipment_id;
     }
 
     public int getJob_id() {
         return job_id;
     }
 
-    public int getTotal_cost() {
-        return total_cost;
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public String getEquipment_name() {
+        return equipment_name;
     }
 }

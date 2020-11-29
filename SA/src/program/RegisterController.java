@@ -23,15 +23,21 @@ public class RegisterController {
     @FXML
     private Label checktextfield, usernametaken, passwordnotmatch, checkemail, checkphone, checkusername, checkname;
 
+    @FXML
+    private ComboBox<String> usertype;
+
     private ArrayList<Contractor> contractors;
 
     public void initialize(){
         contractors = DBConnect.ReadContractor();
+        usertype.getItems().addAll("บริษัท","ผู้รับเหมา");
     }
 
     public boolean CheckUsername(){
         for(Contractor contractor : contractors){
             if(contractor.getUsername().equals(username.getText())){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Already have this username", ButtonType.OK);
+                alert.show();
                 return true;
             }
         }
@@ -39,7 +45,9 @@ public class RegisterController {
     }
 
     public boolean CheckTextField(){
-        if(name.getText().equals("") || username.getText().equals("") || password.getText().equals("") || confirmpassword.getText().equals("") || email.getText().equals("") || phonenumber.getText().equals("")){
+        if(name.getText().equals("") || username.getText().equals("") || password.getText().equals("") || confirmpassword.getText().equals("") || email.getText().equals("") || phonenumber.getText().equals("") || usertype.getValue().equals("")){
+            Alert alert = new Alert(Alert.AlertType.WARNING,"Please enter all information", ButtonType.OK);
+            alert.show();
             return true;
         }
         return false;
@@ -49,7 +57,8 @@ public class RegisterController {
 
         String[] data = email.getText().split("@");
         if (data.length == 1){
-            checkemail.setOpacity(1);
+            Alert alert = new Alert(Alert.AlertType.WARNING,"Invalid Email", ButtonType.OK);
+            alert.show();
             return true;
         }
         return false;
@@ -57,8 +66,24 @@ public class RegisterController {
 
     private boolean CheckPhoneNumber(){
 
-        if(phonenumber.getText().length() != 10){
+        try {
+            int a = Integer.parseInt(phonenumber.getText());
+        }catch (NumberFormatException e){
+            Alert alert = new Alert(Alert.AlertType.WARNING,"Phone Number must be number", ButtonType.OK);
+            alert.show();
+            return true;
+        }
+        String[] data = phonenumber.getText().split("");
+
+        if(data.length != 10 && data[0].equals("0")){
+            Alert alert = new Alert(Alert.AlertType.WARNING,"Phone Number must have 10 digit", ButtonType.OK);
+            alert.show();
             checkphone.setOpacity(1);
+            return true;
+        }
+        else if (!data[0].equals("0")){
+            Alert alert = new Alert(Alert.AlertType.WARNING,"Phone Number must start with 0", ButtonType.OK);
+            alert.show();
             return true;
         }
         return false;
@@ -70,7 +95,8 @@ public class RegisterController {
         }catch (NumberFormatException e){
             return false;
         }
-        checkusername.setOpacity(1);
+        Alert alert = new Alert(Alert.AlertType.WARNING,"Username must have character", ButtonType.OK);
+        alert.show();
         return true;
     }
 
@@ -80,7 +106,8 @@ public class RegisterController {
         }catch (NumberFormatException e){
             return false;
         }
-        checkname.setOpacity(1);
+        Alert alert = new Alert(Alert.AlertType.WARNING,"Name must be character", ButtonType.OK);
+        alert.show();
         return true;
     }
 
@@ -109,22 +136,23 @@ public class RegisterController {
         checkname.setOpacity(0);
 
         if (CheckTextField()){
-            checktextfield.setOpacity(1);
             return;
         }
-
-        if(CheckValue()){
+        else if(CheckValue()){
             return;
         }
-
-        if (CheckUsername()){
-            usernametaken.setOpacity(1);
+        else if (CheckUsername()){
             return;
         }
         else {
             if (password.getText().equals(confirmpassword.getText())){
 
-                DBConnect.WriteContractor(name.getText(),username.getText(),password.getText(), email.getText(), phonenumber.getText());
+                if(usertype.getValue().equals("ผู้รับเหมา")){
+                    DBConnect.WriteContractor(name.getText(),username.getText(),password.getText(), email.getText(), phonenumber.getText());
+                }
+                else if (usertype.getValue().equals("บริษัท")){
+                    DBConnect.WriteCorporation(name.getText(),username.getText(),password.getText(), email.getText(), phonenumber.getText());
+                }
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION,"Registration Complete", ButtonType.OK);
                 alert.showAndWait();

@@ -9,20 +9,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.EquipmentListController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.EquipmentListController">
    <children>
       <ImageView fitHeight="618.0" fitWidth="1081.0" layoutX="-140.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../resource/blackwood.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="equipmentTableView" layoutX="171.0" layoutY="67.0" prefHeight="627.0" prefWidth="658.0">
+      <TableView fx:id="equipmentTableView" layoutX="171.0" layoutY="67.0" prefHeight="512.0" prefWidth="658.0">
         <columns>
-          <TableColumn fx:id="name" prefWidth="157.0" text="Name" />
-            <TableColumn fx:id="brand" prefWidth="136.0" text="Brand" />
-          <TableColumn fx:id="amount" prefWidth="89.0" text="Amount" />
-            <TableColumn fx:id="total" prefWidth="113.0" text="Total" />
-            <TableColumn fx:id="detail" prefWidth="162.0" text="Detail" />
+          <TableColumn fx:id="name" prefWidth="196.0" text="Name" />
+            <TableColumn fx:id="quantity" prefWidth="97.0" text="Quantity" />
+          <TableColumn fx:id="amount" prefWidth="121.0" text="Amount" />
+            <TableColumn fx:id="detail" prefWidth="243.0" text="Detail" />
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="46.0" prefWidth="119.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Back" textFill="WHITE">
@@ -42,7 +41,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label fx:id="cost" layoutX="171.0" layoutY="705.0" text="Total Cost :" textFill="WHITE">
+      <Label fx:id="cost" layoutX="171.0" layoutY="587.0" text="Total Cost :" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -52,7 +51,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="create" layoutX="888.0" layoutY="740.0" mnemonicParsing="false" onAction="#CreateDocumentOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Print" textFill="WHITE">
+      <Button fx:id="create" disable="true" layoutX="876.0" layoutY="633.0" mnemonicParsing="false" onAction="#CreateDocumentOnAction" opacity="0.0" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Print" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -62,7 +61,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="contact" layoutX="171.0" layoutY="746.0" text="Contact" textFill="#25282a">
+      <Label fx:id="contact" layoutX="171.0" layoutY="638.0" text="Contact" textFill="#25282a">
          <font>
             <Font size="24.0" />
          </font>

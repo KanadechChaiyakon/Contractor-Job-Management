@@ -46,7 +46,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="submit" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Submit" textFill="WHITE">
+      <Button fx:id="submit" layoutX="340.0" layoutY="485.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Submit" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -61,5 +61,11 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label layoutX="124.0" layoutY="382.0" text="งบประมาณ" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="JobBudget" layoutX="244.0" layoutY="369.0" prefHeight="61.0" prefWidth="354.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
    </children>
 </AnchorPane>

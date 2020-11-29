@@ -21,19 +21,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="equipment_name" layoutX="265.0" layoutY="147.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
-      <TextField fx:id="price" layoutX="265.0" layoutY="213.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
-      <Label layoutX="181.0" layoutY="218.0" text="ราคา" textFill="WHITE">
+      <Label layoutX="173.0" layoutY="232.0" text="จำนวน" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="173.0" layoutY="283.0" text="จำนวน" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="amount" layoutX="265.0" layoutY="278.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <TextField fx:id="quantity" layoutX="265.0" layoutY="227.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
       <Button fx:id="submit" layoutX="337.0" layoutY="491.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="53.0" prefWidth="127.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Submit" textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -44,20 +37,14 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <TextField fx:id="brand" layoutX="265.0" layoutY="343.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
-      <Label layoutX="184.0" layoutY="348.0" text="ยี่ห้อ" textFill="WHITE">
+      <TextField fx:id="detail" layoutX="265.0" layoutY="301.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
+      <Label layoutX="154.0" layoutY="306.0" text="รายละเอียด" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="detail" layoutX="265.0" layoutY="410.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-inner-color: white;" />
-      <Label layoutX="153.0" layoutY="415.0" text="รายละเอียด" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="JobBox" layoutX="265.0" layoutY="78.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #D5D5D5; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
-      <Label layoutX="187.0" layoutY="83.0" text="งาน" textFill="WHITE">
+      <ComboBox fx:id="JobBox" disable="true" layoutX="265.0" layoutY="78.0" opacity="0.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #D5D5D5; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <Label disable="true" layoutX="187.0" layoutY="83.0" opacity="0.0" text="งาน" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -77,5 +64,11 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <ComboBox fx:id="EquipmentBox" layoutX="265.0" layoutY="147.0" prefHeight="45.0" prefWidth="286.0" style="-fx-background-color: #D5D5D5; -fx-border-color: #414448; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <Button fx:id="addother" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoAddOtherOnAction" prefHeight="53.0" prefWidth="151.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Add Other" textFill="#f8f8f8">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

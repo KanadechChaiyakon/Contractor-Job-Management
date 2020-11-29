@@ -10,9 +10,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Contractor;
+import model.Corporation;
+import model.Equipment;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LoginController {
 
@@ -27,8 +31,51 @@ public class LoginController {
 
     private ArrayList<Contractor> contractors;
 
+    private ArrayList<Corporation> corporations;
+
+    private ArrayList<Equipment> equipments;
+
+    private ArrayList<String> ename =  new ArrayList<String>(){{
+        add("สายไฟ(30เมตร)");
+        add("ปลั๊กไฟติดผนัง");
+        add("แผงควบคุมไฟฟ้า");
+        add("สวิตช์ไฟติดผนัง");
+        add("หลอดไฟLED");
+        add("หลอดไส้");
+        add("เบรกเกอร์");
+        add("ท่อตรง(ขนาด1นิ้วยาวภเมตร)");
+        add("ตัวยึงท่อ");
+        add("ท่ออ่อน(ขนาด16มม.ยาว5เมตร)");
+        add("รางเก็บสายไฟ(2เมตร)");
+        add("กล่องพักสายไฟ(ขนาด4x4นิ้ว)");
+    }};
+
+    private ArrayList<Integer> eprice = new ArrayList<Integer>(){{
+        add(450);
+        add(100);
+        add(2500);
+        add(100);
+        add(230);
+        add(50);
+        add(300);
+        add(130);
+        add(5);
+        add(50);
+        add(50);
+        add(80);
+    }};
+
     public void initialize(){
         contractors = DBConnect.ReadContractor();
+        corporations = DBConnect.ReadCorporation();
+        equipments = DBConnect.ReadEquipment();
+
+        if(equipments.size() == 0){
+            int n = ename.size();
+            for (int i=0 ; i<n; i++){
+                DBConnect.WriteEquipment(ename.get(i),eprice.get(i));
+            }
+        }
     }
 
 
@@ -65,7 +112,29 @@ public class LoginController {
                 checkusername += 1;
             }
         }
-        if(checkusername == contractors.size()){
+
+        for (Corporation corporation : corporations){
+            System.out.println(corporation.getUsername());
+            if(username.getText().equals(corporation.getUsername())){
+                if(password.getText().equals(corporation.getPassword())){
+
+                    FXMLLoader loader = SceneChanger.GetLoaderOnAction(getClass(),"JobOffer.fxml");
+                    SceneChanger.ChangeSceneWithLoaderOnAction(login,"JobOffer.fxml",loader);
+                    JobOfferController jobOfferController = loader.getController();
+                    jobOfferController.setCorporation(corporation);
+
+
+                }else {
+                    passwordincorrect.setOpacity(1);
+                    return;
+                }
+            }
+            else {
+                checkusername += 1;
+            }
+        }
+
+        if(checkusername == contractors.size()+corporations.size()){
             usernameincorrect.setOpacity(1);
         }
     }

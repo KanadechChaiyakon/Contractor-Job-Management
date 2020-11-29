@@ -33,16 +33,20 @@ public class Main extends Application {
             PreparedStatement create = connection.prepareStatement(
                     "CREATE TABLE IF NOT EXISTS 'Contractor' ('ContractorID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Username' TEXT, 'Password' TEXT, 'Email' TEXT, 'PhoneNumber' TEXT)");
             PreparedStatement create2 = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'Job' ('JobID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Type' TEXT, 'Address' TEXT, 'Date' TEXT, 'ContractorID' TEXT, FOREIGN KEY (ContractorID) REFERENCES 'Contractor' ('ContractorID'))");
+                    "CREATE TABLE IF NOT EXISTS 'Corporation' ('CorporationID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'Name' TEXT, 'Username' TEXT, 'Password' TEXT, 'Email' TEXT, 'PhoneNumber' TEXT)");
             PreparedStatement create3 = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'EquipmentList' ('EquipmentListID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'TotalCost' INTEGER, 'JobID' INTEGER, FOREIGN KEY (JobID) REFERENCES 'Job' ('JobID'))");
+                    "CREATE TABLE IF NOT EXISTS 'Job' ('JobID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Type' TEXT, 'Address' TEXT, 'Date' TEXT, 'Status' TEXT, 'Budget' INTEGER, 'ContractorID' TEXT, FOREIGN KEY (ContractorID) REFERENCES 'Contractor' ('ContractorID'))");
             PreparedStatement create4 = connection.prepareStatement(
-                    "CREATE TABLE IF NOT EXISTS 'Equipment' ('EquipmentID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'EquipmentName' TEXT, 'Price' INTEGER,'Amount' INTEGER, 'TotalPrice' INTEGER, 'Brand' TEXT, 'Detail' TEXT, EquipmentListID INTEGER, FOREIGN KEY (EquipmentListID) REFERENCES 'EquipmentList' ('EquipmentListID'))");
+                    "CREATE TABLE IF NOT EXISTS 'Equipment' ('EquipmentID' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'EquipmentName' TEXT, 'Price' INTEGER)");
+            PreparedStatement create5 = connection.prepareStatement(
+                    "CREATE TABLE IF NOT EXISTS 'EquipmentList' ('JobID' INTEGER, 'EquipmentID' INTEGER, 'Quantity' INTEGER, 'Amount' INTEGER, 'Detail' TEXT, PRIMARY KEY (JobID, EquipmentID), FOREIGN KEY (JobID) REFERENCES 'Job' ('JobID'), FOREIGN KEY (EquipmentID) REFERENCES 'Equipment' ('EquipmentID'))");
 
             create.execute();
             create2.execute();
             create3.execute();
             create4.execute();
+            create5.execute();
+
 
         }catch (SQLException e){
             System.err.println(e.getMessage());
