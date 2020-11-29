@@ -305,21 +305,21 @@ public class JobDetailController {
     @FXML
     private void StartWorkOnAction(Event event)throws IOException{
 
-        if(Job.getStatus().equals("Rejected") || Job.getStatus().equals("Accepted") || Job.getStatus().equals("Wait for Request") || Job.getStatus().equals("Started")){
+        if(Job.getStatus().equals("Rejected") || Job.getStatus().equals("Wait for Request") || Job.getStatus().equals("Started") || Job.getStatus().equals("Request")){
             if (Job.getStatus().equals("Rejected")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already rejected", ButtonType.OK);
-                alert.show();
-            }
-            else if (Job.getStatus().equals("Accepted")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already Accepted", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job is rejected", ButtonType.OK);
                 alert.show();
             }
             else if (Job.getStatus().equals("Started")){
                 Alert alert = new Alert(Alert.AlertType.WARNING,"Job already started", ButtonType.OK);
                 alert.show();
             }
+            else if (Job.getStatus().equals("Request")){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job is in request", ButtonType.OK);
+                alert.show();
+            }
             else if (Job.getStatus().equals("Wait for Request")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job in wait for request", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job is in wait for request", ButtonType.OK);
                 alert.show();
             }
             return;
@@ -345,11 +345,33 @@ public class JobDetailController {
 
     @FXML
     private void ManageEquipmentOnAction(Event event)throws IOException{
-        FXMLLoader loader = SceneChanger.GetLoaderOnAction(JobDetailController.class, "EquipmentList.fxml");
-        SceneChanger.ChangeSceneOnAction(manage, JobDetailController.class, "EquipmentList.fxml", loader);
-        EquipmentListController equipmentListController = loader.getController();
-        equipmentListController.SetID(JobID);
-        equipmentListController.SetContractor(contractor);
+
+        if(Job.getStatus().equals("Rejected") || Job.getStatus().equals("Accepted") || Job.getStatus().equals("Started") || Job.getStatus().equals("Request")){
+            if (Job.getStatus().equals("Rejected")){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already rejected", ButtonType.OK);
+                alert.show();
+            }
+            else if (Job.getStatus().equals("Accepted")){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already Accepted", ButtonType.OK);
+                alert.show();
+            }
+            else if (Job.getStatus().equals("Started")){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already started", ButtonType.OK);
+                alert.show();
+            }
+            else if (Job.getStatus().equals("Request")){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job is in requested", ButtonType.OK);
+                alert.show();
+            }
+            return;
+        }
+        else {
+            FXMLLoader loader = SceneChanger.GetLoaderOnAction(JobDetailController.class, "EquipmentList.fxml");
+            SceneChanger.ChangeSceneOnAction(manage, JobDetailController.class, "EquipmentList.fxml", loader);
+            EquipmentListController equipmentListController = loader.getController();
+            equipmentListController.SetID(JobID);
+            equipmentListController.SetContractor(contractor);
+        }
     }
 
     @FXML
