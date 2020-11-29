@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.DeleteEquipmentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.DeleteEquipmentController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="1087.0" layoutX="-133.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
@@ -21,18 +21,18 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="equipmentbox" layoutX="256.0" layoutY="222.0" prefHeight="43.0" prefWidth="289.0" style="-fx-background-color: #D5D5D5; -fx-text-fill: white;" />
-      <Label layoutX="127.0" layoutY="226.0" text="Equipment" textFill="WHITE">
+      <ComboBox fx:id="equipmentbox" layoutX="256.0" layoutY="222.0" prefHeight="43.0" prefWidth="289.0" style="-fx-background-color: #F8F9FD; -fx-border-color: #8F94A8;" />
+      <Label layoutX="127.0" layoutY="226.0" text="Equipment" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="submit" layoutX="332.0" layoutY="318.0" mnemonicParsing="false" onAction="#DeleteOnAction" prefHeight="65.0" prefWidth="136.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-background-radius: 20; -fx-border-radius: 20;" text="Submit" textFill="WHITE">
+      <Button fx:id="submit" layoutX="332.0" layoutY="318.0" mnemonicParsing="false" onAction="#DeleteOnAction" prefHeight="65.0" prefWidth="136.0" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="Submit" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="65.0" prefWidth="122.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-border-radius: 20; -fx-background-radius: 20;" text="Back" textFill="WHITE">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="65.0" prefWidth="122.0" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-border-radius: 20; -fx-background-radius: 20;" text="Back" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

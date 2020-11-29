@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #25282A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.JobListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.JobListController">
    <children>
       <ImageView fitHeight="622.0" fitWidth="1073.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../resource/abstrac.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="joblist" editable="true" layoutX="102.0" layoutY="138.0" prefHeight="390.0" prefWidth="596.0">
+      <TableView fx:id="joblist" editable="true" layoutX="102.0" layoutY="138.0" prefHeight="390.0" prefWidth="596.0" style="-fx-background-color: #F8F9FD;">
         <columns>
           <TableColumn fx:id="JobID" prefWidth="61.0" text="JobID" />
           <TableColumn fx:id="Type" prefWidth="91.0" text="Type" />
@@ -26,22 +26,22 @@
             <TableColumn fx:id="Detail" prefWidth="60.0" text="Detail" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-border-radius: 20; -fx-background-radius: 20;" text="Logout" textFill="WHITE">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-border-radius: 20; -fx-background-radius: 20;" text="Logout" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="add" layoutX="678.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoAddJobOnAction" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: #2D3035; -fx-border-color: #414448; -fx-border-radius: 20; -fx-background-radius: 20;" text="Add Job" textFill="WHITE">
+      <Button fx:id="add" layoutX="678.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoAddJobOnAction" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-border-radius: 20; -fx-background-radius: 20;" text="Add Job" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="300.0" layoutY="38.0" text="Welcome" textFill="WHITE">
+      <Label layoutX="300.0" layoutY="38.0" text="Welcome" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="contractorname" layoutX="430.0" layoutY="38.0" text="User" textFill="WHITE">
+      <Label fx:id="contractorname" layoutX="430.0" layoutY="38.0" text="User" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>

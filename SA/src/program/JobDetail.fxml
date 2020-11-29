@@ -5,29 +5,31 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.JobDetailController">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.JobDetailController">
    <children>
-      <Label fx:id="type" layoutX="23.0" layoutY="179.0" text="ประเภทงาน :">
+      <Pane layoutX="14.0" layoutY="87.0" prefHeight="425.0" prefWidth="408.0" style="-fx-background-color: #F8F9FD; -fx-background-radius: 10;" />
+      <Label fx:id="type" layoutX="23.0" layoutY="179.0" text="ประเภทงาน :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Label fx:id="address" layoutX="51.0" layoutY="129.0" text="ที่อยู่งาน :">
+      <Label fx:id="address" layoutX="51.0" layoutY="129.0" text="ที่อยู่งาน :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Label fx:id="date" layoutX="25.0" layoutY="229.0" text="วันที่รับงาน :">
+      <Label fx:id="date" layoutX="25.0" layoutY="229.0" text="วันที่รับงาน :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="status" layoutX="65.0" layoutY="280.0" text="สถานะ :">
+      <Label fx:id="status" layoutX="65.0" layoutY="280.0" text="สถานะ :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="equipmenttable" layoutX="432.0" layoutY="87.0" prefHeight="513.0" prefWidth="519.0">
+      <TableView fx:id="equipmenttable" layoutX="467.0" layoutY="87.0" prefHeight="513.0" prefWidth="519.0" style="-fx-background-color: #F8F9FD;">
         <columns>
           <TableColumn fx:id="name" prefWidth="152.0" text="Name" />
           <TableColumn fx:id="quantity" prefWidth="90.0" text="Quantity" />
@@ -35,62 +37,62 @@
             <TableColumn fx:id="detail" prefWidth="164.0" text="Detail" />
         </columns>
       </TableView>
-      <Button fx:id="accept" layoutX="102.0" layoutY="537.0" mnemonicParsing="false" onAction="#acceptOnAction" text="อนุมัติ">
+      <Button fx:id="accept" layoutX="102.0" layoutY="537.0" mnemonicParsing="false" onAction="#acceptOnAction" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="อนุมัติ" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="reject" layoutX="240.0" layoutY="537.0" mnemonicParsing="false" onAction="#rejectOnAction" text="ยกเลิก">
+      <Button fx:id="reject" layoutX="240.0" layoutY="537.0" mnemonicParsing="false" onAction="#rejectOnAction" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="ยกเลิก" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="offer" layoutX="106.0" layoutY="537.0" mnemonicParsing="false" onAction="#offerOnAction" text="เสนอ">
+      <Button fx:id="offer" layoutX="106.0" layoutY="537.0" mnemonicParsing="false" onAction="#offerOnAction" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="เสนอ" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Label fx:id="equipmentcost" layoutX="26.0" layoutY="384.0" text="ค่าอุปกรณ์ :">
+      <Label fx:id="equipmentcost" layoutX="26.0" layoutY="384.0" text="ค่าอุปกรณ์ :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="budget" layoutX="24.0" layoutY="333.0" text="งบประมาณ :">
+      <Label fx:id="budget" layoutX="24.0" layoutY="333.0" text="งบประมาณ :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="manage" layoutX="771.0" layoutY="14.0" mnemonicParsing="false" onAction="#ManageEquipmentOnAction" text="จัดการอุปการณ์">
+      <Button fx:id="manage" layoutX="808.0" layoutY="14.0" mnemonicParsing="false" onAction="#ManageEquipmentOnAction" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="จัดการอุปการณ์" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" text="กลับ">
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBackOnAction" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="กลับ" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="canceloffer" layoutX="240.0" layoutY="537.0" mnemonicParsing="false" onAction="#cancelofferOnAction" text="ยกเลิกเสนอ">
+      <Button fx:id="canceloffer" layoutX="240.0" layoutY="537.0" mnemonicParsing="false" onAction="#cancelofferOnAction" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="ยกเลิกเสนอ" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="startwork" layoutX="171.0" layoutY="600.0" mnemonicParsing="false" onAction="#StartWorkOnAction" text="เริ่มงาน">
+      <Button fx:id="startwork" layoutX="171.0" layoutY="600.0" mnemonicParsing="false" onAction="#StartWorkOnAction" style="-fx-background-color: #407CD5; -fx-border-color: #4F87DA; -fx-background-radius: 20; -fx-border-radius: 20;" text="เริ่มงาน" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Label fx:id="contractorname" layoutX="40.0" layoutY="87.0" text="ผู้รับเหมา :">
+      <Label fx:id="contractorname" layoutX="40.0" layoutY="87.0" text="ผู้รับเหมา :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="phone" layoutX="43.0" layoutY="427.0" text="เบอร์โทร :">
+      <Label fx:id="phone" layoutX="43.0" layoutY="427.0" text="เบอร์โทร :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="email" layoutX="59.0" layoutY="471.0" text="email :">
+      <Label fx:id="email" layoutX="59.0" layoutY="471.0" text="email :" textFill="#3e4466">
          <font>
             <Font size="24.0" />
          </font>
