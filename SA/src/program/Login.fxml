@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #8F94A8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.LoginController">
    <children>
       <ImageView fitHeight="607.0" fitWidth="1096.0" layoutX="-112.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
@@ -46,21 +46,21 @@
                   <Font size="24.0" />
                </font>
             </Button>
+            <Label fx:id="nullinput" layoutX="182.0" layoutY="395.0" opacity="0.0" prefHeight="35.0" prefWidth="238.0" text="Please enter username and password" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Label fx:id="usernameincorrect" layoutX="574.0" layoutY="232.0" opacity="0.0" text="Username is incorrect" textFill="RED">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <Label fx:id="passwordincorrect" layoutX="576.0" layoutY="308.0" opacity="0.0" text="Password is incorrect" textFill="RED">
          <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="nullinput" layoutX="522.0" layoutY="407.0" opacity="0.0" prefHeight="35.0" prefWidth="238.0" text="Please enter username and password" textFill="RED">
-         <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Label>
    </children>

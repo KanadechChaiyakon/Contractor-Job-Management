@@ -50,7 +50,7 @@ public class JobOfferController {
 
                 ArrayList<Job> use_job = new ArrayList<>();
                 for(Job job : jobArrayList){
-                    if (job.getStatus().equals("Request") || job.getStatus().equals("Accepted") || job.getStatus().equals("Rejected")){
+                    if (job.getStatus().equals("Request") || job.getStatus().equals("Accepted") || job.getStatus().equals("Rejected") || job.getStatus().equals("Started")){
                         use_job.add(job);
                     }
                 }
