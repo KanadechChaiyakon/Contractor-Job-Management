@@ -55,7 +55,7 @@ public class AddOtherEquipmentController {
         try {
             int a = Integer.parseInt(price.getText());
             if(a<=0 || a>1000000){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Price should between 1-1000000", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Price should between 1-9999999 baht", ButtonType.OK);
                 alert.show();
                 return true;
             }

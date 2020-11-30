@@ -45,7 +45,7 @@ public class RegisterController {
     }
 
     public boolean CheckTextField(){
-        if(name.getText().equals("") || username.getText().equals("") || password.getText().equals("") || confirmpassword.getText().equals("") || email.getText().equals("") || phonenumber.getText().equals("") || usertype.getValue().equals("")){
+        if(name.getText().equals("") || username.getText().equals("") || password.getText().equals("") || confirmpassword.getText().equals("") || email.getText().equals("") || phonenumber.getText().equals("") || usertype.getSelectionModel().getSelectedItem() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING,"Please enter all information", ButtonType.OK);
             alert.show();
             return true;
@@ -78,7 +78,6 @@ public class RegisterController {
         if(data.length != 10 && data[0].equals("0")){
             Alert alert = new Alert(Alert.AlertType.WARNING,"Phone Number must have 10 digit", ButtonType.OK);
             alert.show();
-            checkphone.setOpacity(1);
             return true;
         }
         else if (!data[0].equals("0")){
@@ -153,6 +152,11 @@ public class RegisterController {
                 else if (usertype.getValue().equals("บริษัท")){
                     DBConnect.WriteCorporation(name.getText(),username.getText(),password.getText(), email.getText(), phonenumber.getText());
                 }
+                else {
+                    Alert alert = new Alert(Alert.AlertType.WARNING,"Please choose user type", ButtonType.OK);
+                    alert.show();
+                    return;
+                }
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION,"Registration Complete", ButtonType.OK);
                 alert.showAndWait();
@@ -163,7 +167,9 @@ public class RegisterController {
                 stage.setScene(scene);
 
             }else {
-                passwordnotmatch.setOpacity(1);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION,"Password not match", ButtonType.OK);
+                alert.showAndWait();
+                return;
             }
         }
     }
