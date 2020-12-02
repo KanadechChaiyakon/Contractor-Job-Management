@@ -146,7 +146,7 @@ public class JobDetailController {
                 alert.show();
             }
             else if (Job.getStatus().equals("Accepted")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already Accepted", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already accepted", ButtonType.OK);
                 alert.show();
             }
             else if (Job.getStatus().equals("Started")){
@@ -186,7 +186,7 @@ public class JobDetailController {
                 alert.show();
             }
             else if (Job.getStatus().equals("Accepted")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already Accepted", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already accepted", ButtonType.OK);
                 alert.show();
             }
             else if (Job.getStatus().equals("Started")){
@@ -228,7 +228,7 @@ public class JobDetailController {
                 alert.show();
             }
             else if (Job.getStatus().equals("Accepted")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already Accepted", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already accepted", ButtonType.OK);
                 alert.show();
             }
             else if (Job.getStatus().equals("Started")){
@@ -272,7 +272,7 @@ public class JobDetailController {
                 alert.show();
             }
             else if (Job.getStatus().equals("Accepted")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already Accepted", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already accepted", ButtonType.OK);
                 alert.show();
             }
             else if (Job.getStatus().equals("Started")){
@@ -352,7 +352,7 @@ public class JobDetailController {
                 alert.show();
             }
             else if (Job.getStatus().equals("Accepted")){
-                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already Accepted", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Job already accepted", ButtonType.OK);
                 alert.show();
             }
             else if (Job.getStatus().equals("Started")){
